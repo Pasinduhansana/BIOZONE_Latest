@@ -1,6 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "react-spring"; // Import react-spring for animation
 import Img1 from "../Assest/Web_Images/1.jpg";
+import Img2 from "../Assest/Web_Images/2.jpeg";
+import Img3 from "../Assest/Web_Images/3.jpg";
+import Img4 from "../Assest/Web_Images/4.jpg";
+import Img5 from "../Assest/Web_Images/5.jpg";
+import Img6 from "../Assest/Web_Images/6.jpg";
+import Img7 from "../Assest/Web_Images/7.jpg";
+import Img8 from "../Assest/Web_Images/8.jpg";
+import Img9 from "../Assest/Web_Images/9.jpg";
 
 const Gallery = () => {
   const [counter1, setCounter1] = useState(0);
@@ -120,7 +128,7 @@ const Gallery = () => {
               className="bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl md:col-span-5 md:row-span-2"
             >
               <img
-                src={Img1}
+                src={Img2}
                 alt="Grid 1"
                 className="object-cover w-full h-full rounded-xl"
               />
@@ -129,7 +137,7 @@ const Gallery = () => {
             {/* 4 */}
             <div className="bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl md:col-span-7 md:row-span-2">
               <img
-                src={Img1}
+                src={Img2}
                 alt="Grid 1"
                 className="object-cover w-full h-full rounded-xl"
               />
@@ -138,7 +146,7 @@ const Gallery = () => {
             {/* 5 */}
             <div className="bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl md:col-span-5 md:row-span-1">
               <img
-                src={Img1}
+                src={Img4}
                 alt="Grid 1"
                 className="object-cover w-full h-full rounded-xl"
               />
@@ -174,7 +182,7 @@ const Gallery = () => {
             {/* 8 */}
             <div className="bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl md:col-span-7 md:row-span-1">
               <img
-                src={Img1}
+                src={Img5}
                 alt="Grid 1"
                 className="object-cover w-full h-full rounded-xl"
               />
@@ -183,7 +191,7 @@ const Gallery = () => {
             {/* 9 */}
             <div className="bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl md:col-span-5 md:row-span-2">
               <img
-                src={Img1}
+                src={Img6}
                 alt="Grid 1"
                 className="object-cover w-full h-full rounded-xl"
               />
@@ -192,7 +200,7 @@ const Gallery = () => {
             {/* 10 */}
             <div className="bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl md:col-span-5 md:row-span-2">
               <img
-                src={Img1}
+                src={Img7}
                 alt="Grid 1"
                 className="object-cover w-full h-full rounded-xl"
               />
@@ -215,7 +223,7 @@ const Gallery = () => {
             {/* 12 */}
             <div className="bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl md:col-span-5 md:row-span-1">
               <img
-                src={Img1}
+                src={Img8}
                 alt="Grid 1"
                 className="object-cover w-full h-full rounded-xl"
               />
@@ -224,7 +232,7 @@ const Gallery = () => {
             {/* 13 */}
             <div className="bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl md:col-span-7 md:row-span-2">
               <img
-                src={Img1}
+                src={Img9}
                 alt="Grid 1"
                 className="object-cover w-full h-full rounded-xl"
               />
