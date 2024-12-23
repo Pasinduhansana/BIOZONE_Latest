@@ -1,0 +1,100 @@
+[
+	{
+		"locationName": "ISM Nugegoda",
+		"address": "26 Poorwarama Rd, Nugegoda 00600",
+		"addressLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.1447310324647!2d79.88889739999999!3d6.8732562999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a4685f0c329%3A0x7d7bdc421062250d!2s26%20Poorwarama%20Rd%2C%20Nugegoda%2000600!5e0!3m2!1sen!2slk!4v1734580511570!5m2!1sen!2slk",
+		"classes": [
+			{
+				"classtype": "Revision",
+				"year": "2026",
+				"medium": "E",
+				"day": "Monday",
+				"time": "10:00 AM - 12:00 PM"
+			},
+			{
+				"classtype": "Theory",
+				"year": "2026",
+				"medium": "සි",
+				"day": "Monday",
+				"time": "8:00 AM - 11:00 PM"
+			},
+			{
+				"classtype": "Theory",
+				"year": "2026",
+				"medium": "සි",
+				"day": "Monday",
+				"time": "8:00 AM - 11:00 PM"
+			}
+		]
+	},
+	{
+		"locationName": "Shakthi Bambalapitiya",
+		"address": "Galle Rd, Colombo 00500",
+		"addressLink": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3961.056105129528!2d79.858679!3d6.883883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bc4144f82c9%3A0x23e8ba26fca564e4!2sShakthi%20Institute!5e0!3m2!1sen!2slk!4v1734604127472!5m2!1sen!2slk",
+		"classes": [
+			{
+				"classtype": "Theory",
+				"year": "2025",
+				"medium": "E",
+				"day": "Wednesday",
+				"time": "3:00 PM - 7:00 PM"
+			},
+			{
+				"classtype": "paper",
+				"year": "2025",
+				"medium": "සි",
+				"day": "Sunday",
+				"time": "1:00 PM - 4:00 PM"
+			},
+			{
+				"classtype": "Theory",
+				"year": "2026",
+				"medium": "සි",
+				"day": "Thuesday",
+				"time": "3:00 PM - 6:00 PM"
+			}
+		]
+	},
+	{
+		"locationName": "Sisulka rathnapura",
+		"address": "Veralupa Old Rd, Ratnapura",
+		"addressLink": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4358.943159400899!2d80.3978341467544!3d6.685847720228651!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3bf1046dd5875%3A0xf53cf310303192e4!2sSisulka%20Higher%20Educational%20Institute!5e0!3m2!1sen!2slk!4v1734604814084!5m2!1sen!2slk",
+		"classes": [
+			{
+				"classtype": "Theory",
+				"year": "2026",
+				"medium": "සි",
+				"day": "Sunday",
+				"time": "1:00 PM - 6:00 PM"
+			}
+		]
+	},
+	{
+		"locationName": "Siyochem Nugegoda",
+		"address": "26 Poorwarama Rd, Nugegoda 00600",
+		"addressLink": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15844.60893283107!2d79.897347!3d6.872356!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25a461503567f%3A0x7a2f1e1e274d8758!2sSiyochem!5e0!3m2!1sen!2slk!4v1734604943245!5m2!1sen!2slk",
+		"classes": [
+			{
+				"classtype": "Theory",
+				"year": "2025",
+				"medium": "සි",
+				"day": "Saturday",
+				"time": "7:30 AM - 12:00 PM"
+			},
+			{
+				"classtype": "Paper",
+				"year": "2026",
+				"medium": "E",
+				"day": "Friday",
+				"time": "3:00 pM - 6:30 PM"
+			},
+			{
+				"classtype": "Theory",
+				"year": "2026",
+				"medium": "සි",
+				"day": "Saturday",
+				"time": "1:00 PM - 5:00 PM"
+			}
+		]
+	}
+]
