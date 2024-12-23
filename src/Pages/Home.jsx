@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Landing from "../Components/Landing";
 import Gallery from "../Components/Gallery";
 import FAQ from "../Components/FAQ";
@@ -10,17 +10,35 @@ import Navigation from "../Components/Navigation";
 import Map from "../Components/Map";
 
 const Home = () => {
+  // Define refs for each section
+  const homeRef = useRef(null);
+  const locationsRef = useRef(null);
+  const galleryRef = useRef(null);
+  const contactRef = useRef(null);
+
   return (
     <div className="flex flex-col">
-      <Navigation />
-      <Landing />
-      <Map />
-      <Gallery />
+      {/* Pass the refs to the corresponding sections */}
+      <Navigation
+        homeRef={homeRef}
+        locationsRef={locationsRef}
+        galleryRef={galleryRef}
+        contactRef={contactRef}
+      />
+      <div ref={homeRef}>
+        <Landing />
+      </div>
+      <div ref={locationsRef}>
+        <Map />
+      </div>
+      <div ref={galleryRef}>
+        <Gallery />
+      </div>
       <FAQ />
-      {/* <AboutUs /> */}
       <Advertisement />
-      <ContactUs />
-
+      <div ref={contactRef}>
+        <ContactUs />
+      </div>
       <Footer className="absolute bottom-0 left-0 w-screen" />
     </div>
   );

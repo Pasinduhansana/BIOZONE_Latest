@@ -16,9 +16,9 @@ const Gallery = () => {
   const [counter3, setCounter3] = useState(0);
   const [counter4, setCounter4] = useState(0);
 
-  const target1 = 6;
-  const target2 = 421;
-  const target3 = 834;
+  const target1 = 10;
+  const target2 = 321;
+  const target3 = 134;
   const target4 = 321;
 
   const gridRef1 = useRef(null);
