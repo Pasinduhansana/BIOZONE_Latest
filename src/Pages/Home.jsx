@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Landing from "../Components/Landing";
 import Gallery from "../Components/Gallery";
 import FAQ from "../Components/FAQ";
@@ -15,6 +16,16 @@ const Home = () => {
   const locationsRef = useRef(null);
   const galleryRef = useRef(null);
   const contactRef = useRef(null);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const lang = params.get("lang");
+    if (lang) {
+      localStorage.setItem("language", lang);
+    }
+  }, [location]);
 
   return (
     <div className="flex flex-col">
@@ -35,11 +46,18 @@ const Home = () => {
         <Gallery />
       </div>
       <FAQ />
+      {/* <AboutUs /> */}
       <Advertisement />
       <div ref={contactRef}>
         <ContactUs />
       </div>
-      <Footer className="absolute bottom-0 left-0 w-screen" />
+      <Footer
+        className="absolute bottom-0 left-0 w-screen"
+        homeRef={homeRef}
+        locationsRef={locationsRef}
+        galleryRef={galleryRef}
+        contactRef={contactRef}
+      />
     </div>
   );
 };

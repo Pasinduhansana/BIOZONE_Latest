@@ -1,14 +1,38 @@
 import React, { useState, useRef, useEffect } from "react";
 import Logo from "../Assest/Web_Images/BioZoneLogo.png";
-import { PrimaryButton } from "./Elements/Buttons";
+import {
+  PrimaryButton,
+  SinhalaButton,
+  EnglishButton,
+  LanguageToggleButton,
+} from "./Elements/Buttons";
 import { useSpring, animated } from "react-spring";
 import { HiOutlineMenuAlt3 } from "react-icons/hi"; // For hamburger icon
 import { AiOutlineClose } from "react-icons/ai"; // For close icon
+import content from "../content/navigationContent";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isRotating, setIsRotating] = useState(true);
+  const [language, setLanguage] = useState("en");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language");
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+    localStorage.setItem("language", lang);
+    console.log(`Language changed to: ${lang}`);
+    document.documentElement.lang = lang;
+    navigate(`/home?lang=${lang}`);
+  };
 
   // Handle toggling the menu
   const toggleMenu = () => {
@@ -45,11 +69,12 @@ const Navigation = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
     });
   };
 
-  const navLinks = ["Home", "Locations", "Gallery", "Contact us"];
+  const currentContent = content[language];
+  const navLinks = currentContent.navLinks;
   const sectionRefs = [homeRef, locationsRef, galleryRef, contactRef];
 
   return (
-    <nav className="shadow-md">
+    <nav className="shadow-md w-screen overflow-hidden">
       <div className="navcard 2xl:px-56 xl:px-36 px-5 w-full h-16 lg:h-auto  bg-[#f9fefcc2] backdrop-blur-[20px] py-4 lg:flex items-center justify-between shadow-sm fixed top-0 left-0 z-50">
         {/* Logo */}
         <div className="flex flex-row justify-between z-50 -mt-3">
@@ -86,8 +111,15 @@ const Navigation = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
         </ul>
 
         {/* Desktop Button */}
-        <div className="hidden lg:block">
-          <PrimaryButton TextContent={"Online Student Portal"} />
+        <div className="hidden lg:flex  justify-center  gap-1 -mr-10">
+          <div className="lg:block mr-5">
+            <PrimaryButton TextContent={currentContent.onlineStudentPortal} />
+          </div>
+
+          <LanguageToggleButton
+            onLanguageChange={handleLanguageChange}
+            language={language}
+          />
         </div>
       </div>
 
@@ -113,9 +145,15 @@ const Navigation = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
               </li>
             ))}
             <li>
-              <button className="w-full bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700">
-                Online Student Portal →
+              <button className="w-full bg-gradient-to-r from-primary1 to-primary2 text-white px-4 py-2 rounded-lg hover:bg-teal-700">
+                {currentContent.onlineStudentPortal}
               </button>
+              <div className="flex justify-start items-center py-3 px-0">
+                <LanguageToggleButton
+                  onLanguageChange={handleLanguageChange}
+                  language={language}
+                />
+              </div>
             </li>
           </ul>
         </animated.div>

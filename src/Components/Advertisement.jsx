@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { VscChevronLeft, VscChevronRight } from "react-icons/vsc";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 const Advertisement = () => {
   const [advertisements, setAdvertisements] = useState([]);
@@ -52,9 +53,15 @@ const Advertisement = () => {
   };
 
   return (
-    <div className="container relative w-full mx-auto flex flex-col items-center justify-center h-screen lg:gap-10 gap-0">
+    <div className="container relative  mx-auto flex flex-col items-center justify-center h-screen lg:gap-10 gap-0 w-screen overflow-hidden">
       {/* Header */}
-      <div className="text-center flex flex-col justify-center items-center">
+      <motion.div
+        className="text-center flex flex-col justify-center items-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false, amount: 0.5 }}
+      >
         <p className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
           Highlights
         </p>
@@ -66,19 +73,27 @@ const Advertisement = () => {
           classes. These showcase important events, <br />
           learning opportunities, and updates for students.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="hidden overflow-hidden relative flex-row lg:flex items-center justify-center gap-4 h-[500px]">
+      <motion.div
+        className="hidden overflow-hidden relative flex-row lg:flex items-center justify-center gap-4 h-[500px]"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
+      >
         <button onClick={goToPrevious} className="top-1/2 left-0">
           <VscChevronLeft className="text-gray-500 text-[55px]" />
         </button>
 
         <div className="overflow-hidden px-2 lg:w-[1214px] h-full flex flex-row items-center">
-          <div
-            className="flex transition-transform duration-500"
-            style={{
-              transform: `translateX(-${currentIndex * (300 + 150)}px)`,
-            }} // 76px for the gap
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            transition={{ duration: 0.8 }}
+            className="flex"
           >
             {images.map((image, index) => {
               // Determine if the current image is the middle image
@@ -100,21 +115,29 @@ const Advertisement = () => {
                 </div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
 
         <button onClick={goToNext} className="top-1/2 right-0">
           <VscChevronRight className="text-gray-500 text-[55px]" />
         </button>
-      </div>
+      </motion.div>
 
-      <div className="flex overflow-hidden relative flex-col lg:hidden items-center justify-center gap-2 h-[400px]">
+      <motion.div
+        className="flex overflow-hidden relative flex-col lg:hidden items-center justify-center gap-2 h-[400px]"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false, amount: 0.5 }}
+      >
         <div className="overflow-hidden px-2 w-[320px] h-full flex flex-row items-center">
-          <div
-            className="flex transition-transform duration-500 "
-            style={{
-              transform: `translateX(-${currentIndex * (300 + 150)}px)`,
-            }} // 76px for the gap
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            transition={{ duration: 0.5 }}
+            className="flex"
           >
             {images.map((image, index) => {
               // Determine if the current image is the middle image
@@ -134,7 +157,7 @@ const Advertisement = () => {
                 </div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
         <div className="flex flex-row mb-4">
           <button onClick={goToPrevious} className="top-1/2 left-0">
@@ -144,7 +167,7 @@ const Advertisement = () => {
             <VscChevronRight className="text-gray-500 text-[30px]" />
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
