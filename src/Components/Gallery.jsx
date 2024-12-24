@@ -99,7 +99,7 @@ const Gallery = () => {
 
   return (
     <section className="relative overflow-hidden bg-white h-full lg:h-[220vh]">
-      <div className="relative flex flex-col justify-center w-full h-full p-8 py-12 mx-auto 2xl:max-w-7xl">
+      <div className="relative flex flex-col justify-center w-full h-full py-12 mx-auto ">
         <div className="py-2 flex flex-col  text-center justify-center items-center">
           <h3 className="mb-3 font bg-gradient-to-r from-[#2BC294] to-[#02624C] bg-clip-text text-transparent font-semibold ">
             {currentContent.gallery}
@@ -111,13 +111,13 @@ const Gallery = () => {
             {currentContent.witness}
           </p>
         </div>
-        <div className="pt-6 mx-auto mt-0 text-gray-500 max-w-7xl border-neutral-200 text-balance">
+        <div className="pt-6 py-2 px-6 overflow-hidden mx-auto mt-0 text-gray-500  border-neutral-200 text-balance">
           {/* Desktop Gallery */}
-          <div className="hidden lg:grid grid-cols-1 gap-4 md:grid-cols-4 lg:grid-cols-7  grid-flow-row">
+          <div className="hidden lg:grid grid-cols-1   gap-4 md:grid-cols-4 lg:grid-cols-7  grid-flow-row">
             {/* 1 */}
             <motion.div
               ref={gridRef1}
-              className={`relative lg:h-[35vh] bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl overflow-hidden col-span-3 ${
+              className={`relative lg:h-[35vh]  bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl overflow-hidden col-span-3 ${
                 hoveredIndex !== null && hoveredIndex !== 0 ? "blur-sm" : ""
               }`}
               initial={{ opacity: 0, y: 50 }}
@@ -409,7 +409,7 @@ const Gallery = () => {
                 </animated.span>
               </p>
               <p className="px-12 text-4xl">|</p>
-              <p className="text-lg text-center">
+              <p className="text-[18px] text-center">
                 {currentContent.positiveFeedback}
               </p>
             </motion.div>
@@ -456,7 +456,6 @@ const Gallery = () => {
               <p className="text-2xl text-center">
                 {currentContent.completedJourney}
                 <br />
-                <br />
                 <animated.span>
                   {animatedCounter1.number.to((n) => `${n.toFixed(0)}Y+`)}
                 </animated.span>
@@ -501,10 +500,10 @@ const Gallery = () => {
               transition={{ duration: 0.5, delay: 0.7 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-              <p className="mb-12 text-4xl font-semibold text-center">
+              <p className="mb-5 text-[22px] font-semibold text-center">
                 {currentContent.inspiringMoments}
               </p>
-              <p className="text-xl text-center">
+              <p className="text-[16px] text-center font-thin">
                 {currentContent.witness}
                 <br />
                 {currentContent.activities}

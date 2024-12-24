@@ -24,7 +24,7 @@ const SplashScreen = ({ handleLanguageChange }) => {
       setIsAnimating(true);
       const timer = setTimeout(() => {
         handleLanguageChange(language);
-        navigate(`/home?lang=${language}`); // Redirect to home screen with selected language
+        navigate("/home"); // Redirect to home screen
       }, 3000); // Adjust the duration as needed
 
       return () => clearTimeout(timer);

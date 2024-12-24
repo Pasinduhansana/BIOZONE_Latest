@@ -39,7 +39,7 @@ function App() {
     setIsLanguageSelected(true);
     setTimeout(() => {
       setIsLoading(false);
-      navigate(`/home?lang=${lang}`);
+      navigate("/home"); // Navigate to home without parsing the URL string
     }, 3000); // Adjust the duration as needed
   };
 

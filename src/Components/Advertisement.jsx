@@ -87,13 +87,11 @@ const Advertisement = () => {
         </button>
 
         <div className="overflow-hidden px-2 lg:w-[1214px] h-full flex flex-row items-center">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 100 }}
-            transition={{ duration: 0.8 }}
-            className="flex"
+          <div
+            className="flex transition-transform duration-500"
+            style={{
+              transform: `translateX(-${currentIndex * (300 + 150)}px)`,
+            }} // 76px for the gap
           >
             {images.map((image, index) => {
               // Determine if the current image is the middle image
@@ -115,7 +113,7 @@ const Advertisement = () => {
                 </div>
               );
             })}
-          </motion.div>
+          </div>
         </div>
 
         <button onClick={goToNext} className="top-1/2 right-0">

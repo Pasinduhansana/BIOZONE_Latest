@@ -69,8 +69,6 @@ const EnglishButton = ({ TextContent }) => {
 };
 
 const LanguageToggleButton = ({ onLanguageChange, language }) => {
-  const navigate = useNavigate();
-
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language");
     if (savedLanguage) {
@@ -82,7 +80,7 @@ const LanguageToggleButton = ({ onLanguageChange, language }) => {
     onLanguageChange(lang);
     console.log(`Language changed to: ${lang}`);
     document.documentElement.lang = lang; // Change the web language
-    navigate(`?lang=${lang}`); // Update the URL language parameter
+    localStorage.setItem("language", lang); // Save the language to local storage
     if (window.location.pathname !== "/") {
       window.location.reload(true); // Reload the page if not on the SplashScreen
     }

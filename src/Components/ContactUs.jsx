@@ -42,7 +42,7 @@ const SecondarySubmitButton1 = ({ TextContent, onClick }) => {
   return (
     <div className="flex items-center justify-center">
       <button
-        className="text-primary1 border-2 bg-white border-primary1 hover:scale-[1.02] rounded-[5px] h-[48px] w-full sm:w-[298px] hover:text-primaryHover2 transition-all duration-200"
+        className="text-primary1 border-2 bg-white border-primary1 hover:scale-[1.02] rounded-[5px] h-[48px] w-full sm:w-[250px] hover:text-primaryHover2 transition-all duration-200"
         onClick={onClick}
       >
         {TextContent}
@@ -271,22 +271,22 @@ const ContactUs = () => {
             {/* Contact Cards */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-x-[70px] lg:gap-10 sm:gap-6 mb-6 lg:mt-10">
               {/* Card 1 */}
-              <div className="bg-white shadow-md rounded-md p-4 flex items-center gap-4 relative h-32 w-full sm:w-64 md:w-[200px] sm:p-10">
+              <div className="bg-white shadow-md rounded-md p-4 flex items-center gap-4 relative h-32 w-full sm:w-64 md:w-[250px] sm:p-10">
                 <span className="text-primary1 text-3xl absolute top-4 left-4 sm:top-5 sm:left-5">
                   <IoMailOutline />
                 </span>
-                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-5">
+                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-5 text-wrap overflow-hidden">
                   <p className="text-black font-semibold text-sm sm:font-medium">
                     {content.contactMethods.email}
                   </p>
-                  <p className="text-black font-light text-xs sm:text-sm opacity-70">
+                  <p className="text-black font-light text-xs sm:text-[14px] opacity-70 text-wrap w-full">
                     info@charithamunasinghe.lk
                   </p>
                 </div>
               </div>
 
               {/* Card 2 */}
-              <div className="bg-white shadow-md rounded-md p-4 flex items-center gap-4 relative h-32 w-full sm:w-64 md:w-[200px] sm:p-10">
+              <div className="bg-white shadow-md rounded-md p-4 flex items-center gap-4 relative h-32 w-full sm:w-64 md:w-[250px] sm:p-10">
                 <span className="text-primary1 text-3xl absolute top-4 left-4 sm:top-5 sm:left-5">
                   <IoCallOutline />
                 </span>
@@ -332,7 +332,7 @@ const ContactUs = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 w-full">
+            <div className="flex flex-col sm:flex-row gap-6 lg:gap-x-[50px] w-full">
               <SecondarySubmitButton1
                 TextContent={content.actionButtons.whatsapp}
                 onClick={handleWhatsAppClick}

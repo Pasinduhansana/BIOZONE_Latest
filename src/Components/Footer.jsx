@@ -76,7 +76,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
       <img
         src={bgimg}
         alt="bgimage"
-        className="absolute bottom-0 lg:translate-y-1/3 -translate-y-1/6 left-10 lg:left-40 -rotate-[15deg] transform scale-y-[-1] z-0 animate-orbit3"
+        className="absolute bottom-0 lg:translate-y-2/3 -translate-y-1/6 left-10 lg:left-40 -rotate-[15deg] transform scale-y-[-1] h-[60%] -z-10 animate-orbit3"
       />
 
       <div className="flex items-center justify-center -mb-5 lg:mb-0">
