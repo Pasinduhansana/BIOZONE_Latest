@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import AdminModel from "../models/model.admin.js"; // Path to your AdminMode
 
 // Register  new admin
