@@ -13,7 +13,7 @@ const Advertisement = () => {
 
   const autoSlideInterval = useRef(null);
 
-useEffect(() => {
+  useEffect(() => {
     const savedLanguage = localStorage.getItem("language");
     if (savedLanguage) {
       setLanguage(savedLanguage);
@@ -67,7 +67,10 @@ useEffect(() => {
     startAutoSlide();
     if (!isAnimating) {
       setIsAnimating(true);
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + advertisements.length) % advertisements.length);
+      setCurrentIndex(
+        (prevIndex) =>
+          (prevIndex - 1 + advertisements.length) % advertisements.length
+      );
     }
   };
 
@@ -117,11 +120,11 @@ useEffect(() => {
         viewport={{ once: false, amount: 0.5 }}
       >
         <p className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
-         {content.highlights}
+          {content.highlights}
         </p>
         <h2 className="text-2xl xl:text-3xl px-20 lg;px-0 2xl:text-4xl text-primarytext mb-2 font-medium">
-         {content.title}
-
+          {content.title}
+        </h2>
         <p className="text-gray-600 mb-3 lg:mb-10 font-sans text-[16px] px-8 lg:px-0 mt-3 xl:text-lg 2xl:text-lg font-thin">
           {content.description}
         </p>
@@ -207,11 +210,7 @@ useEffect(() => {
           >
             <VscChevronLeft className="text-gray-500 text-[30px]" />
           </button>
-          <button
-            onClick={goToNext}
-            aria-label="Next slide"
-            className="p-2"
-          >
+          <button onClick={goToNext} aria-label="Next slide" className="p-2">
             <VscChevronRight className="text-gray-500 text-[30px]" />
           </button>
         </div>
