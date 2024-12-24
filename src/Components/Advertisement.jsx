@@ -2,8 +2,21 @@ import React, { useState, useEffect, useRef } from "react";
 import { VscChevronLeft, VscChevronRight } from "react-icons/vsc";
 import axios from "axios";
 import { motion } from "framer-motion";
+import content from "../content/advertisementContent";
 
 const Advertisement = () => {
+
+  const [language, setLanguage] = useState("en");
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language");
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  const currentContent = content[language];
+
   const [advertisements, setAdvertisements] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -106,15 +119,13 @@ const Advertisement = () => {
         viewport={{ once: false, amount: 0.5 }}
       >
         <p className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
-          Highlights
+          {currentContent.highlights}
         </p>
         <h2 className="text-2xl xl:text-3xl px-20 lg:px-0 2xl:text-4xl text-primarytext mb-2 font-medium">
-          Featuring Key Highlights
+          {currentContent.title}
         </h2>
         <p className="text-gray-600 mb-3 lg:mb-10 font-sans text-[16px] px-8 lg:px-0 mt-3 xl:text-lg 2xl:text-lg font-thin">
-          Discover the latest highlights, schedules, and topics from our
-          classes. These showcase important events, <br />
-          learning opportunities, and updates for students.
+          {currentContent.description}
         </p>
       </motion.div>
 
