@@ -5,7 +5,7 @@ import {
   IoMapOutline,
   IoEarth,
 } from "react-icons/io5";
-import contactUsContent from "../Content/ContactUsContent";
+import contactUsContent from "../content/ContactUsContent";
 import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
 import bgImage from "../Assest/Web_Images/Bg Plexus.png";
