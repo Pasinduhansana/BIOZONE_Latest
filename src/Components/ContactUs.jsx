@@ -10,6 +10,7 @@ import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
 import bgImage from "../Assest/Web_Images/Bg Plexus.png";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 // SubmitButton Component
 const SubmitButton = ({ TextContent, onClick }) => {
@@ -105,7 +106,7 @@ const ContactUs = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (
       !formData.name ||
       !formData.email ||
@@ -115,26 +116,21 @@ const ContactUs = () => {
       toast.error("Please fill in all fields.");
       return;
     }
-
+  
     if (!validateEmail(formData.email)) {
       toast.error("Please enter a valid email address.");
       return;
     }
-
+  
     try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          to: "Gallagepasinduhansana@gmail.com",
-          subject: formData.subject,
-          text: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
-        }),
+      const response = await axios.post("http://localhost:3080/api/send-email", {
+        from: formData.email,
+        to: "navodchathushka@gmail.com",  // Replace with actual email
+        subject: formData.subject,
+        text: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
       });
-
-      if (response.ok) {
+  
+      if (response.status === 200) {
         toast.success("Email sent successfully!");
         setFormData({
           name: "",
@@ -144,11 +140,14 @@ const ContactUs = () => {
         });
       } else {
         toast.error("Failed to send email. Please try again later.");
+        console.log(response);
       }
     } catch (error) {
       toast.error("An error occurred. Please try again later.");
+      console.error(error);
     }
   };
+  
 
   return (
     <div className="relative w-full flex items-center justify-center overflow-hidden">
