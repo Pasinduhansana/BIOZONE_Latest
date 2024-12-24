@@ -7,7 +7,7 @@ const Login = () => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
-	const login = useAuth();
+	const { login } = useAuth();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
