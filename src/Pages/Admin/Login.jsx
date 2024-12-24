@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import toast from 'react-hot-toast';
+import { useAuth } from '../../Services/AuthContex';
+import axios from 'axios';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,18 +19,19 @@ const Login = () => {
         password: password,
       });
 
-      if (response.status === 200) {
-         localStorage.setItem("adminToken", response.data.token); // Store token
-         toast.success("Login successful!");
-         navigate("/admin/dashboard");
+      // TEST: check the response
+      console.log(response);
+
+      if(response.status === 200) {
+        login();  // to make isAuth == true in AuthContext
+        localStorage.setItem("adminToken", response.data.token); // Store token
+        toast.success("Login successful!");
+        navigate("/admin/dashboard");
       }
+
     } catch (error) {
-      // check invalid credentials
-      if (error.response && error.response.status === 401) {
-        toast.error('Invalid credentials. Please try again.');
-      } else {
-        toast.error('Something went wrong. Please try again later.');
-      }
+      toast.error("Something went wrong!");
+      console.log(error.message);
     }
   };
 

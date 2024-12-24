@@ -24,7 +24,7 @@ function App() {
   const [isLanguageSelected, setIsLanguageSelected] = useState(false);
   const [isPreLoading, setIsPreLoading] = useState(true);
   const navigate = useNavigate();
-  const { isAuth } = useAuth();
+  const isAuth = useAuth();
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language");
