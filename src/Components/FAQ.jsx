@@ -27,7 +27,7 @@ const FAQ = () => {
       <img
         src={bgImage}
         alt="Background"
-        className="absolute  w-[70vw] h-auto -left-20 -bottom-10 object-cover opacity-90"
+        className="absolute w-full h-full object-cover opacity-90"
       />
       <div className="2xl:px-52 xl:px-24 px-10 relative flex items-center justify-center overflow-hidden">
         <div className="w-full max-w-3xl flex flex-col justify-center items-center">
