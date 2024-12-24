@@ -152,18 +152,18 @@ const ContactUs = () => {
 
   return (
     <div className="relative w-full flex items-center justify-center overflow-hidden">
-      <div className="px-4 md:px-10 lg:px-20 xl:px-52 relative h-full md:h-screen flex items-center justify-center">
+      <div className="px-4 md:px-10 lg:px-20 xl:px-52 relative h-full md:h-full flex items-center justify-center">
         {/* Container */}
-        <div className="flex flex-col md:flex-row justify-evenly items-center gap-10 px-6 py-12 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-col lg:flex-row lg:justify-evenly items-center gap-10 px-6 py-12  mx-auto">
           {/* Left Side: Contact Form */}
           <motion.div
-            className="w-full md:w-1/3"
+            className="w-full lg:w-1/3"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <p className="text-gray-500 text-[16px] sm:text-[18px] md:text-base mb-4 text-center md:text-left">
+            <p className="text-gray-500 text-[16px] sm:text-[18px] md:text-base mb-4 text-center lg:text-left">
               {content.intro}
             </p>
 
@@ -230,7 +230,7 @@ const ContactUs = () => {
               </div>
 
               {/* Buttons */}
-              <div className="flex justify-end gap-3 md:gap-5 ">
+              <div className="flex lg:justify-end gap-3 lg:gap-5 justify-center ">
                 <SecondarySubmitButton
                   TextContent={content.buttons.clear}
                   onClick={handleClear}
@@ -244,7 +244,7 @@ const ContactUs = () => {
           </motion.div>
 
           <div
-            className="hidden md:block self-stretch h-screen opacity-50"
+            className="hidden lg:block self-stretch h-screen opacity-50"
             style={{
               background:
                 "linear-gradient(to bottom, transparent 10px, #008000 10px, #008000 20px, transparent 20px)", // Green color
@@ -255,21 +255,21 @@ const ContactUs = () => {
 
           {/* Right Side: Contact Options */}
           <motion.div
-            className="w-full md:w-1/2"
+            className="w-full lg:w-1/2"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h2 className="text-[#008861] text-4xl md:text-[64px] font-[600px] mb-4 lg:mb-10">
+            <h2 className="text-[#008861] text-center text-4xl md:text-[64px] font-[600px] lg:mt-0 md:mt-5 mb-4 lg:mb-10">
               {content.getInTouch}
             </h2>
-            <p className="text-gray-500 text-sm sm:text-base mb-6">
+            <p className="text-gray-500 text-center text-sm sm:text-base mb-6">
               {content.description}
             </p>
 
             {/* Contact Cards */}
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-x-[70px] lg:gap-10 sm:gap-6 mb-6 lg:mt-10">
+            <div className="grid grid-cols-1 gap-4 md:gap-1  sm:grid-cols-2 lg:gap-x-[70px] lg:gap-10 sm:gap-6 mb-6 lg:mt-10 justify-items-center items-centers">
               {/* Card 1 */}
               <div className="bg-white shadow-md rounded-md p-4 flex items-center gap-4 relative h-32 w-full sm:w-64 md:w-[250px] sm:p-10">
                 <span className="text-primary1 text-3xl absolute top-4 left-4 sm:top-5 sm:left-5">
@@ -332,7 +332,7 @@ const ContactUs = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 lg:gap-x-[50px] w-full">
+            <div className="flex flex-col sm:flex-row gap-6 lg:gap-x-[50px] md:justify-center md:gap-18 w-full">
               <SecondarySubmitButton1
                 TextContent={content.actionButtons.whatsapp}
                 onClick={handleWhatsAppClick}
