@@ -17,13 +17,14 @@ import "swiper/css/pagination";
 import SplashScreen from "./Components/SplashScreen";
 import PreLoader from "./Components/PreLoader";
 import { useState, useEffect } from "react";
+import { AuthProvider, useAuth } from "./Services/AuthContex";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isLanguageSelected, setIsLanguageSelected] = useState(false);
   const [isPreLoading, setIsPreLoading] = useState(true);
   const navigate = useNavigate();
-  const isAuthenticated = false;
+  const isAuth = useAuth();
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language");
@@ -66,8 +67,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         {/* Admin Routes */}
         <Route path="/admin" element={<Login />} />
-        <Route element={<PrivateRoute isAuth={isAuthenticated} />}>
-          <Route path="/dashboard" element={<Admin />} />
+        <Route element={<PrivateRoute isAuth={isAuth} />}>
+          <Route path="admin/dashboard" element={<Admin />} />
         </Route>
       </Routes>
     </div>
@@ -76,8 +77,10 @@ function App() {
 
 export default function AppWrapper() {
   return (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
