@@ -153,7 +153,7 @@ const Map = () => {
                       {/* Class Details */}
                       <div className="bg-gradient-to-r from-primary2 to-primary1 text-white p-3 rounded-lg w-7/12">
                         <div className="flex justify-between w-full">
-                          <span className="font-medium text-[16px] xl:text-[18px] mt-[3px] 2xl:text-[20px] w-16 lg:w-28">
+                          <span className="font-medium text-[16px] xl:text-[18px] mt-[3px] 2xl:text-[20px] w-16">
                             {classItem.classtype}
                           </span>
                           <span className="font-light text-[16px] xl:text-[17px] mt-1 2xl:text-[20px]">
