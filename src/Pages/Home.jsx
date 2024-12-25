@@ -28,14 +28,14 @@ const Home = () => {
   }, [location]);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-screen overflow-hidden">
       {/* Pass the refs to the corresponding sections */}
-      <Navigation
+      {/* <Navigation
         homeRef={homeRef}
         locationsRef={locationsRef}
         galleryRef={galleryRef}
         contactRef={contactRef}
-      />
+      /> */}
       <div ref={homeRef}>
         <Landing />
       </div>
@@ -46,7 +46,7 @@ const Home = () => {
         <Gallery />
       </div>
       <FAQ />
-      {/* <AboutUs /> */}
+      <AboutUs />
       <Advertisement />
       <div ref={contactRef}>
         <ContactUs />

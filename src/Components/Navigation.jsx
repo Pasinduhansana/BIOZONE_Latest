@@ -75,7 +75,7 @@ const Navigation = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 
   return (
     <nav className="shadow-md w-screen overflow-hidden">
-      <div className="navcard 2xl:px-56 xl:px-36 px-5 w-full h-16 lg:h-auto  bg-[#f9fefcc2] backdrop-blur-[20px] py-4 lg:flex items-center justify-between shadow-sm fixed top-0 left-0 z-50">
+      <div className="navcard 2xl:px-56 xl:px-36 px-5 w-full h-16 lg:h-auto  bg-[#f9fefca9] backdrop-blur-[20px] py-4 lg:flex items-center justify-between shadow-sm fixed top-0 left-0 z-50">
         {/* Logo */}
         <div className="flex flex-row justify-between z-50 -mt-3">
           <div className="flex items-center cursor-pointer w-auto">
@@ -83,7 +83,7 @@ const Navigation = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
           </div>
 
           {/* Hamburger Icon */}
-          <div className="md:hidden flex flex-row justify-between w-auto z-50">
+          <div className="lg:hidden flex flex-row justify-between w-auto z-50">
             <button
               onClick={toggleMenu}
               className={`text-2xl focus:outline-none transform transition-transform duration-300 ${
