@@ -22,6 +22,8 @@ const Advertisement = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [isScalingDown, setIsScalingDown] = useState(false);
+  const [direction, setDirection] = useState(1);  // control mobile view image sliding direction
 
   const autoSlideInterval = useRef(null);
 
@@ -75,6 +77,7 @@ const Advertisement = () => {
   const goToPrevious = () => {
     stopAutoSlide(); // Reset auto-slide timer
     startAutoSlide();
+    setDirection(-1);
     if (!isAnimating) {
       setIsAnimating(true);
       setCurrentIndex(
@@ -87,6 +90,7 @@ const Advertisement = () => {
   const goToNext = () => {
     stopAutoSlide(); // Reset auto-slide timer
     startAutoSlide();
+    setDirection(1);
     if (!isAnimating) {
       setIsAnimating(true);
       setCurrentIndex((prevIndex) => (prevIndex + 1) % advertisements.length);
@@ -101,6 +105,19 @@ const Advertisement = () => {
       return () => clearTimeout(timer);
     }
   }, [isAnimating]);
+
+  useEffect(() => {
+    if (advertisements.length > 0) {
+      const scaleDownTimer = setTimeout(() => {
+        setIsScalingDown(true);
+      }, 4800);  // 5 seconds - 1.5 seconds
+
+      return () => {
+        clearTimeout(scaleDownTimer);
+        setIsScalingDown(false);  // Reset scale-down state after each slide
+      }
+    }
+  }, [currentIndex, advertisements])
 
   if (loading) {
     return <div>Loading advertisements...</div>;
@@ -153,29 +170,36 @@ const Advertisement = () => {
         {/* Previous Button */}
         <button
           onClick={goToPrevious}
-          className="absolute top-1/2 left-4 z-10 bg-white bg-opacity-50 rounded-full transform -translate-y-1/2"
+          className="absolute top-1/2 left-12 z-10 bg-white bg-opacity-50 rounded-full transform -translate-y-1/2"
           aria-label="Previous slide"
         >
           <VscChevronLeft className="text-gray-500 text-[55px]" />
         </button>
 
         {/* Carousel Content */}
-        <div className="overflow-hidden px-2 lg:w-[1214px] h-full flex flex-row items-center">
-          <div className="flex transition-transform duration-500">
+        <div className="overflow-hidden lg:w-[1214px] h-full flex flex-row items-center">
+          <div className="flex ">
             {visibleImages.map((image, index) => (
-              <div
-                key={index}
-                className={`flex-shrink-0 w-[300px] border-[1.5px] overflow-hidden rounded-[15px] border-gray-200 h-[300px] mr-[150px] ${
-                  index === 1 ? "scale-150" : "scale-100"
+              <motion.img
+                key={`${image}-${currentIndex}-${index}`}
+                src={image}
+                alt={`Slide ${index}`}
+                className={`object-cover h-full w-full border-[1.5px] overflow-hidden rounded-[15px] border-gray-200 mx-2 ${
+                  index === 1 ? `mx-2` : `mx-0`
                 }`}
-              >
-                <img
-                  src={image}
-                  alt={`Slide ${index}`}
-                  className="object-cover h-full w-full"
-                  loading="lazy"
-                />
-              </div>
+                initial={{ scale: 0.8, opacity: 0.5 }}
+                animate={{
+                  scale: index === 1 ? (isScalingDown ? 0.8 : 1.2) : 0.8, // Scale larger for the center, slightly smaller for sides
+                  opacity: index === 1 ? 1 : 0.7, // Full opacity for center, reduced for sides
+                  x: index === 0 ? -10 : index === 2 ? 10 : 0, // Subtle horizontal translation for left/right images
+                }}
+                transition={{
+                  scale: { duration: 0.7 },
+                  opacity: { duration: 0.7 },
+                  x: { duration: 0.7 }, // Smooth transition
+                }}
+                loading="lazy"
+              />
             ))}
           </div>
         </div>
@@ -183,7 +207,7 @@ const Advertisement = () => {
         {/* Next Button */}
         <button
           onClick={goToNext}
-          className="absolute top-1/2 right-2 z-10 bg-white bg-opacity-50 rounded-full transform -translate-y-1/2"
+          className="absolute top-1/2 right-12 z-10 bg-white bg-opacity-50 rounded-full transform -translate-y-1/2"
           aria-label="Next slide"
         >
           <VscChevronRight className="text-gray-500 text-[55px]" />
@@ -201,9 +225,9 @@ const Advertisement = () => {
         <div className="overflow-hidden px-2 w-[320px] h-full flex flex-row items-center">
           <motion.div
             key={currentIndex}
-            initial={{ opacity: 0, x: -100 }}
+            initial={{ opacity: 0, x: direction * 100 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 100 }}
+            exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
             className="flex"
           >
@@ -218,11 +242,7 @@ const Advertisement = () => {
           </motion.div>
         </div>
         <div className="flex flex-row mt-4">
-          <button
-            onClick={goToPrevious}
-            aria-label="Previous slide"
-            className="p-2"
-          >
+          <button onClick={goToPrevious} aria-label="Previous slide" className="p-2">
             <VscChevronLeft className="text-gray-500 text-[30px]" />
           </button>
           <button onClick={goToNext} aria-label="Next slide" className="p-2">
