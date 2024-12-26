@@ -9,6 +9,7 @@ import ContactUs from "../Components/ContactUs";
 import Footer from "../Components/Footer";
 import Navigation from "../Components/Navigation";
 import Map from "../Components/Map";
+import TemAbout from "../Components/TemAbout";
 
 const Home = () => {
   // Define refs for each section
@@ -47,6 +48,7 @@ const Home = () => {
       </div>
       <FAQ />
       {/* <AboutUs /> */}
+      <TemAbout />
       <Advertisement />
       <div ref={contactRef}>
         <ContactUs />

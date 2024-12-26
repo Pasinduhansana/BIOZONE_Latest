@@ -42,7 +42,7 @@ const FAQ = () => {
             <p className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
               {content.support}
             </p>
-            <h2 className="text-[28px] xl:text-[40px] 2xl:text-[48px] text-primarytext mb-2 font-medium w-auto lg:text-nowrap">
+            <h2 className="font-reddit text-[28px] xl:text-[40px] 2xl:text-[48px] text-primarytext mb-2 font-medium w-auto lg:text-nowrap">
               {content.title}
             </h2>
             <p className="text-gray-500 mb-10 font-sans text-[14px] xl:text-[18px] 2xl:text-[18px]">

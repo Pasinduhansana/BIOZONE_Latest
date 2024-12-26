@@ -4,7 +4,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				reddit: ["Noto Sans", "sans-serif"], 
+				reddit: ['"Reddit Sans"', 'sans-serif'],
+
 			},
 			colors: {
 				primarytext: "#383838", //Back text colour
