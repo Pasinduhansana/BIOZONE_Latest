@@ -127,9 +127,9 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
       </div>
 
       <div className="flex w-full  items-center justify-between border-t-[1px] mt-5">
-        <footer className=" px-4 pt-16 pb-6  sm:px-6 md:px-12 lg:px-60 font-poppins w-screen">
+        <footer className="pt-16 pb-6  sm:px-6 md:px-12 lg:px-60 font-poppins w-screen">
           {/* Grid Layout */}
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-between  lg:w-full">
+          <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-between lg:w-full">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 lg:gap-20 md:gap-12 w-full lg:w-auto mt-5 md:mt-0 lg:mt-0 md:justify-items-center">
               {/* Navigation Section */}
               <div className="text-center lg:-mt-5 lg:text-left md:text-center">
@@ -196,9 +196,9 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 
             {/* Newsletter Section */}
             <div className="order-first md:w-full md:mt-10 lg:mt-0 text-center md:text-left md:order-none lg:w-2/6 mb-5 z-40">
-              <h3 className="mb-4 text-primarytext3 md:text-center lg:text-left font-thin text-[15px] px-0 lg:text-[16px]">
+              <div className="w-full px-4 sm:px-0 text-primarytext3 mb-4 font-thin">
                 {currentContent.newsletter}
-              </h3>
+              </div>
               <div className="flex flex-col items-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 px-10 lg:px-0 lg:pr-5">
                 <input
                   type="email"
