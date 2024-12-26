@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { VscChevronLeft, VscChevronRight } from "react-icons/vsc";
-import articleContent from "../content/advertisementContent";
 import axios from "axios";
 import { motion } from "framer-motion";
 import content from "../content/advertisementContent";
@@ -32,8 +31,6 @@ const Advertisement = () => {
       setLanguage(savedLanguage);
     }
   }, []);
-
-  // const content = articleContent[language] || articleContent.en;
 
   useEffect(() => {
     const fetchAdvertisements = async () => {
