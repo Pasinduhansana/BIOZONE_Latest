@@ -101,7 +101,7 @@ const Gallery = () => {
     <section className="relative overflow-hidden bg-white h-full lg:h-full">
       <div className="relative flex flex-col justify-center w-full h-full py-12 mx-auto ">
         <div className="py-2 flex flex-col  text-center justify-center items-center">
-          <h3 className="mb-3 font bg-gradient-to-r from-[#2BC294] to-[#02624C] bg-clip-text text-transparent font-semibold ">
+          <h3 className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
             {currentContent.gallery}
           </h3>
           <h1 className="mb-4 text-4xl font-semibold">

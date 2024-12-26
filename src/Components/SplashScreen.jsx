@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import bgimage from "../Assest/Web_Images/Bg Plexus.png";
 import Logo from "../Assest/Web_Images/BioZoneLogo.png";
-import { LanguageToggleButton } from "./Elements/Buttons";
+import { LanguageToggleButton, SplashScreenLanguageToggleButton } from "./Elements/Buttons";
 import content from "../content/splashScreenContent";
 import { useNavigate } from "react-router-dom";
 
@@ -55,11 +55,11 @@ const SplashScreen = ({ handleLanguageChange }) => {
         />
         {!isAnimating && (
           <>
-            <h1 className="text-2xl font-bold text-green-600 mb-2">BIOZONE</h1>
-            <p className="text-gray-600 mb-6">
+            <h1 className="text-2xl font-bold text-green-600 mb-8">BIOZONE</h1>
+            <p className="text-gray-600 mb-4">
               {currentContent.selectLanguage}
             </p>
-            <LanguageToggleButton
+            <SplashScreenLanguageToggleButton
               onLanguageChange={(lang) => {
                 setLanguage(lang);
                 localStorage.setItem("language", lang);
