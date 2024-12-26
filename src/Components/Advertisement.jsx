@@ -33,7 +33,7 @@ const Advertisement = () => {
     }
   }, []);
 
-  const content = articleContent[language] || articleContent.en;
+  // const content = articleContent[language] || articleContent.en;
 
   useEffect(() => {
     const fetchAdvertisements = async () => {
