@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import Routes from "./router/router.js";
 import adminRoutes from "../backend/router/Adminroutes.js"
+import emailRoutes from "./router/emailRoutes.js";
 
 dotenv.config();
 
@@ -28,3 +29,4 @@ mongoose
 
 app.use("/api/admin", Routes);
 app.use("/api/auth/admin", adminRoutes);
+app.use("/api/send-email", emailRoutes);
