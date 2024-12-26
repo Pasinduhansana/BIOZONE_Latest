@@ -227,6 +227,7 @@ const Advertisement = () => {
 			</motion.div>
 		</div>
 	);
+
 };
 
 export default Advertisement;

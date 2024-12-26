@@ -15,6 +15,7 @@ import { SecondaryButton } from "./Elements/Buttons";
 import { useNavigate } from "react-router-dom";
 
 const Gallery = () => {
+
 	const navigate = useNavigate();
 
 	const handleClick = () => {

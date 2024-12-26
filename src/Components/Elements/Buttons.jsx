@@ -117,7 +117,46 @@ const LanguageToggleButton = ({ onLanguageChange, language }) => {
 	);
 };
 
+const SplashScreenLanguageToggleButton = ({ onLanguageChange, language }) => {
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language");
+    if (savedLanguage) {
+      document.documentElement.lang = savedLanguage; // Set the initial language
+    }
+  }, []);
+
+  const handleLanguageChange = (lang) => {
+    onLanguageChange(lang);
+    console.log(`Language changed to: ${lang}`);
+    document.documentElement.lang = lang; // Change the web language
+    localStorage.setItem("language", lang); // Save the language to local storage
+    if (window.location.pathname !== "/") {
+      window.location.reload(true); // Reload the page if not on the SplashScreen
+    }
+  };
+
+  const isEnglish = language === "en";
+
+  return (
+    <div className="flex flex-col items-center justify-center gap-1 ">
+      <button
+        className={`text-primary1 border-2 bg-white border-primary1  hover:scale-[1.02] rounded-[8px] h-[48px] w-60 hover:text-primaryHover2 transition-all duration-200 px-2`}
+        onClick={() => handleLanguageChange("en")}
+      >
+        {isEnglish ? "En" : "English"}
+      </button>
+      <button
+        className={`text-primary1 border-2 bg-white border-primary1  hover:scale-[1.02] rounded-[8px] h-[48px] w-60 hover:text-primaryHover2 transition-all duration-200 px-2 mt-3`}
+        onClick={() => handleLanguageChange("si")}
+      >
+        {isEnglish ? "සිං" : "සිංහල"}
+      </button>
+    </div>
+  );
+};
+
 export {
+
 	PrimaryButton,
 	SubmitButton,
 	SecondaryButton,
@@ -125,4 +164,5 @@ export {
 	SinhalaButton,
 	EnglishButton,
 	LanguageToggleButton,
+
 };

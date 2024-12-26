@@ -108,6 +108,7 @@ const Map = () => {
 				</motion.div>
 			</div>
 
+
 			{/* Modal for Timetable Details */}
 			{isModalOpen && (
 				<div className="fixed inset-0  flex items-center justify-center backdrop-blur-[10px] bg-black bg-opacity-10 z-50">
