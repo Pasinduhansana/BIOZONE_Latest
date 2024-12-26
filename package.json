@@ -26,8 +26,9 @@
     "react-scroll": "^1.9.0",
     "react-spring": "^9.7.5",
     "react-toastify": "^11.0.2",
+    "simplex-noise": "^4.0.3",
     "swiper": "^11.1.15",
-    "tailwind-merge": "^2.5.5"
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",

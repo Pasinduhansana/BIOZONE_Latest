@@ -18,6 +18,8 @@ import SplashScreen from "./Components/SplashScreen";
 import PreLoader from "./Components/PreLoader";
 import { useState, useEffect } from "react";
 import { AuthProvider, useAuth } from "./Services/AuthContex";
+import Scroll from "./Components/Scroll";
+import AboutUs from "./Components/AboutUs";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

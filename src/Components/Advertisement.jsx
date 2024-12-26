@@ -1,11 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
 import { VscChevronLeft, VscChevronRight } from "react-icons/vsc";
-import articleContent from "../content/advertisementContent";
 import axios from "axios";
 import { motion } from "framer-motion";
+import content from "../content/advertisementContent";
 
 const Advertisement = () => {
+
+
   const [language, setLanguage] = useState("en");
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language");
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  const currentContent = content[language];
+
   const [advertisements, setAdvertisements] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -13,14 +25,12 @@ const Advertisement = () => {
 
   const autoSlideInterval = useRef(null);
 
-useEffect(() => {
+  useEffect(() => {
     const savedLanguage = localStorage.getItem("language");
     if (savedLanguage) {
       setLanguage(savedLanguage);
     }
   }, []);
-
-  const content = articleContent[language] || articleContent.en;
 
   useEffect(() => {
     const fetchAdvertisements = async () => {
@@ -67,7 +77,10 @@ useEffect(() => {
     startAutoSlide();
     if (!isAnimating) {
       setIsAnimating(true);
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + advertisements.length) % advertisements.length);
+      setCurrentIndex(
+        (prevIndex) =>
+          (prevIndex - 1 + advertisements.length) % advertisements.length
+      );
     }
   };
 
@@ -117,13 +130,13 @@ useEffect(() => {
         viewport={{ once: false, amount: 0.5 }}
       >
         <p className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
-         {content.highlights}
+          {currentContent.highlights}
         </p>
-        <h2 className="text-2xl xl:text-3xl px-20 lg;px-0 2xl:text-4xl text-primarytext mb-2 font-medium">
-         {content.title}
-</h2>
+        <h2 className="text-2xl xl:text-3xl px-20 lg:px-0 2xl:text-4xl text-primarytext mb-2 font-medium">
+          {currentContent.title}
+        </h2>
         <p className="text-gray-600 mb-3 lg:mb-10 font-sans text-[16px] px-8 lg:px-0 mt-3 xl:text-lg 2xl:text-lg font-thin">
-          {content.description}
+          {currentContent.description}
         </p>
       </motion.div>
       {/* Desktop Carousel */}
@@ -134,14 +147,16 @@ useEffect(() => {
         transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true, amount: 0.1 }}
       >
+        {/* Previous Button */}
         <button
           onClick={goToPrevious}
-          className="top-1/2 left-0"
+          className="absolute top-1/2 left-4 z-10 bg-white bg-opacity-50 rounded-full transform -translate-y-1/2"
           aria-label="Previous slide"
         >
           <VscChevronLeft className="text-gray-500 text-[55px]" />
         </button>
 
+        {/* Carousel Content */}
         <div className="overflow-hidden px-2 lg:w-[1214px] h-full flex flex-row items-center">
           <div className="flex transition-transform duration-500">
             {visibleImages.map((image, index) => (
@@ -162,9 +177,10 @@ useEffect(() => {
           </div>
         </div>
 
+        {/* Next Button */}
         <button
           onClick={goToNext}
-          className="top-1/2 right-0"
+          className="absolute top-1/2 right-2 z-10 bg-white bg-opacity-50 rounded-full transform -translate-y-1/2"
           aria-label="Next slide"
         >
           <VscChevronRight className="text-gray-500 text-[55px]" />
@@ -206,11 +222,7 @@ useEffect(() => {
           >
             <VscChevronLeft className="text-gray-500 text-[30px]" />
           </button>
-          <button
-            onClick={goToNext}
-            aria-label="Next slide"
-            className="p-2"
-          >
+          <button onClick={goToNext} aria-label="Next slide" className="p-2">
             <VscChevronRight className="text-gray-500 text-[30px]" />
           </button>
         </div>
