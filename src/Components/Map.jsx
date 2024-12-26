@@ -42,7 +42,7 @@ const Map = () => {
       <div className="text-center lg:p-5 p-3">
         <div className="flex flex-col items-center justify-center">
           <motion.div
-            className="bg-gradient-to-r from-primary1 to-primary2 text-transparent bg-clip-text"
+            className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3"
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
