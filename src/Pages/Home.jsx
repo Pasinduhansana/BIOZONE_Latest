@@ -9,6 +9,7 @@ import ContactUs from "../Components/ContactUs";
 import Footer from "../Components/Footer";
 import Navigation from "../Components/Navigation";
 import Map from "../Components/Map";
+import VortextComponent from "../Components/VortextComponent";
 
 const Home = () => {
   // Define refs for each section
@@ -30,12 +31,12 @@ const Home = () => {
   return (
     <div className="flex flex-col w-screen overflow-hidden">
       {/* Pass the refs to the corresponding sections */}
-      {/* <Navigation
+      <Navigation
         homeRef={homeRef}
         locationsRef={locationsRef}
         galleryRef={galleryRef}
         contactRef={contactRef}
-      /> */}
+      />
       <div ref={homeRef}>
         <Landing />
       </div>
@@ -46,13 +47,19 @@ const Home = () => {
         <Gallery />
       </div>
       <FAQ />
-      <AboutUs />
+      {/* <AboutUs /> */}
       <Advertisement />
       <div ref={contactRef}>
         <ContactUs />
       </div>
-      <Footer
+      {/* <Footer
         className="absolute bottom-0 left-0 w-screen"
+        homeRef={homeRef}
+        locationsRef={locationsRef}
+        galleryRef={galleryRef}
+        contactRef={contactRef}
+      /> */}
+      <VortextComponent
         homeRef={homeRef}
         locationsRef={locationsRef}
         galleryRef={galleryRef}
