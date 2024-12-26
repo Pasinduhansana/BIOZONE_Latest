@@ -79,9 +79,9 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
         className="absolute bottom-0 lg:translate-y-2/3 -translate-y-1/6 left-10 lg:left-40 -rotate-[15deg] transform scale-y-[-1] h-[60%] -z-10 animate-orbit3"
       />
 
-      <div className="flex items-center justify-center -mb-5 lg:mb-0 ">
+      <div className="flex items-center justify-center -mb-5 lg:mb-0">
         <motion.div
-          className="flex flex-col items-center justify-between px-6 py-12 lg:px-64 md:flex-row md:py-4 ease-linear "
+          className="flex flex-col items-center justify-between px-6 py-12 lg:px-60 md:flex-row md:py-4 ease-linear"
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0 }}
@@ -89,7 +89,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
         >
           {/* Text Section */}
           <div className="max-w-lg mb-8 md:text-left md:mb-0 md:w-3/6 mr-5">
-            <h2 className="mb-4 text-3xl font-medium lg:font-semibold text-gray-[#606060] px-1 md:text-left sm:text-left md:font-semibold md:text-[30px] lg:text-4xl">
+            <h2 className="mb-4 text-3xl font-medium lg:font-semibold text-gray-[#606060] px-1 md:text-left sm:text-left md:font-semibold md:text-[30px] lg:text-3xl">
               {currentContent.readyToElevate}
             </h2>
             <p className="mb-6  text-primarytext3 text-[14px] lg:text-l px-1 md:text-left">
@@ -127,7 +127,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
       </div>
 
       <div className="flex w-full  items-center justify-between border-t-[1px] mt-5">
-        <footer className=" px-4 pt-16 pb-6  sm:px-6 md:px-12 lg:px-64 font-poppins w-screen">
+        <footer className=" px-4 pt-16 pb-6  sm:px-6 md:px-12 lg:px-60 font-poppins w-screen">
           {/* Grid Layout */}
           <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-between  lg:w-full">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 lg:gap-20 md:gap-12 w-full lg:w-auto mt-5 md:mt-0 lg:mt-0 md:justify-items-center">
@@ -209,7 +209,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
                 />
                 <div className="flex items-center justify-center ">
                   <button
-                    className="text-primarytextwhite bg-gradient-to-r from-primary1 to-primary2  hover:scale-[1.02] rounded-[6px] h-[40px] w-[92vw] md:w-[170px] lg:w-[110px] hover:text-white font-normal transition-all duration-200"
+                    className="text-primarytextwhite bg-gradient-to-r from-primary1 to-primary2  hover:scale-[1.02] rounded-[6px] h-[40px] w-[92vw] md:w-[170px] lg:w-auto lg:px-2 hover:text-white font-normal transition-all duration-200"
                     onClick={handleNewsletterSubmit}
                   >
                     {currentContent.submit}

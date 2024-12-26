@@ -151,7 +151,7 @@ const ContactUs = () => {
 
   return (
     <div className="relative w-full flex items-center justify-center overflow-hidden">
-      <div className="px-4 md:px-10 lg:px-20 xl:px-52 relative h-full md:h-full flex items-center justify-center">
+      <div className="px-4 md:px-10 lg:px-10 xl:px-52 relative h-full md:h-full flex items-center justify-center">
         {/* Container */}
         <div className="flex flex-col md:flex-col lg:flex-row lg:justify-evenly items-center gap-10 px-6 py-12  mx-auto">
           {/* Left Side: Contact Form */}
@@ -260,7 +260,7 @@ const ContactUs = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h2 className="text-[#008861] text-center text-4xl md:text-[64px] font-[600px] lg:mt-0 md:mt-5 mb-4 lg:mb-10">
+            <h2 className="text-[#008861] text-center text-4xl lg:text-4xl md:text-[64px] font-[600px] lg:mt-0 md:mt-5 mb-4 lg:mb-10">
               {content.getInTouch}
             </h2>
             <p className="text-gray-500 text-center text-sm sm:text-base mb-6">

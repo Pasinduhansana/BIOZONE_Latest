@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { VscChevronLeft, VscChevronRight } from "react-icons/vsc";
-import articleContent from "../content/advertisementContent";
 import axios from "axios";
 import { motion } from "framer-motion";
 import content from "../content/advertisementContent";
@@ -32,8 +31,6 @@ const Advertisement = () => {
       setLanguage(savedLanguage);
     }
   }, []);
-
-  // const content = articleContent[language] || articleContent.en;
 
   useEffect(() => {
     const fetchAdvertisements = async () => {
@@ -153,14 +150,16 @@ const Advertisement = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         viewport={{ once: true, amount: 0.1 }}
       >
+        {/* Previous Button */}
         <button
           onClick={goToPrevious}
-          className="top-1/2 left-0"
+          className="absolute top-1/2 left-4 z-10 bg-white bg-opacity-50 rounded-full transform -translate-y-1/2"
           aria-label="Previous slide"
         >
           <VscChevronLeft className="text-gray-500 text-[55px]" />
         </button>
 
+        {/* Carousel Content */}
         <div className="overflow-hidden px-2 lg:w-[1214px] h-full flex flex-row items-center">
           <div className="flex transition-transform duration-500">
             {visibleImages.map((image, index) => (
@@ -181,9 +180,10 @@ const Advertisement = () => {
           </div>
         </div>
 
+        {/* Next Button */}
         <button
           onClick={goToNext}
-          className="top-1/2 right-0"
+          className="absolute top-1/2 right-2 z-10 bg-white bg-opacity-50 rounded-full transform -translate-y-1/2"
           aria-label="Next slide"
         >
           <VscChevronRight className="text-gray-500 text-[55px]" />

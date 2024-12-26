@@ -39,7 +39,7 @@ const Landing = () => {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.div
-          className="text-[13px] xl:text-[15px] 2xl:text-[16px] flex items-center justify-center -mb-4 text-primary1 border-[1.5px] lg:border-2 bg-white border-primary1 rounded-[4px]  lg:rounded-[8px] h-[28px] w-auto lg:h-[36px] lg:w-[265px]  transition-all duration-200 ease-linear px-2"
+          className="text-[13px] xl:text-[15px] 2xl:text-[16px] flex items-center justify-center -mb-4 text-primary1 border-[1.5px] lg:border-2 bg-white border-primary1 rounded-[4px]  lg:rounded-[8px] h-[28px] w-auto transition-all duration-200 ease-linear px-2"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
