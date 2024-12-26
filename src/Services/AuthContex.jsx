@@ -8,13 +8,8 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
 	const [isAuth, setIsAuth] = useState(false);
 
-	const login = (username, password) => {
-		if (username === "admin@email.com" && password === "Admin") {
-			setIsAuth(true);
-			return true;
-		} else {
-			return false;
-		}
+	const login = () => {
+		setIsAuth(true);
 	};
 
 	// Function to log out
