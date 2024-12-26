@@ -157,7 +157,6 @@ const Advertisement = () => {
 
         </p>
       </motion.div>
-
       {/* Desktop Carousel */}
       <motion.div
         className="hidden overflow-hidden relative flex-row lg:flex items-center justify-center gap-4 h-[500px]"
