@@ -5,18 +5,16 @@ import { motion } from "framer-motion";
 import content from "../content/advertisementContent";
 
 const Advertisement = () => {
+	const [language, setLanguage] = useState("en");
 
+	useEffect(() => {
+		const savedLanguage = localStorage.getItem("language");
+		if (savedLanguage) {
+			setLanguage(savedLanguage);
+		}
+	}, []);
 
-  const [language, setLanguage] = useState("en");
-
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("language");
-    if (savedLanguage) {
-      setLanguage(savedLanguage);
-    }
-  }, []);
-
-  const currentContent = content[language];
+	const currentContent = content[language];
 
   const [advertisements, setAdvertisements] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,54 +23,54 @@ const Advertisement = () => {
   const [isScalingDown, setIsScalingDown] = useState(false);
   const [direction, setDirection] = useState(1);  // control mobile view image sliding direction
 
-  const autoSlideInterval = useRef(null);
+	const autoSlideInterval = useRef(null);
 
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem("language");
-    if (savedLanguage) {
-      setLanguage(savedLanguage);
-    }
-  }, []);
+	useEffect(() => {
+		const savedLanguage = localStorage.getItem("language");
+		if (savedLanguage) {
+			setLanguage(savedLanguage);
+		}
+	}, []);
 
-  useEffect(() => {
-    const fetchAdvertisements = async () => {
-      try {
-        const response = await axios.get("http://localhost:3080/api/admin/");
-        if (response.data.message === "Advertisements fetched successfully") {
-          setAdvertisements(response.data.data);
-        } else {
-          console.error("Failed to fetch advertisements.");
-        }
-      } catch (error) {
-        console.error("Error fetching advertisements:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+	useEffect(() => {
+		const fetchAdvertisements = async () => {
+			try {
+				const response = await axios.get("http://localhost:3080/api/admin/");
+				if (response.data.message === "Advertisements fetched successfully") {
+					setAdvertisements(response.data.data);
+				} else {
+					console.error("Failed to fetch advertisements.");
+				}
+			} catch (error) {
+				console.error("Error fetching advertisements:", error);
+			} finally {
+				setLoading(false);
+			}
+		};
 
-    fetchAdvertisements();
-  }, []);
+		fetchAdvertisements();
+	}, []);
 
-  useEffect(() => {
-    if (advertisements.length > 0) {
-      startAutoSlide();
-    }
-    return () => stopAutoSlide(); // Cleanup
-  }, [advertisements]);
+	useEffect(() => {
+		if (advertisements.length > 0) {
+			startAutoSlide();
+		}
+		return () => stopAutoSlide(); // Cleanup
+	}, [advertisements]);
 
-  const startAutoSlide = () => {
-    stopAutoSlide(); // Clear any existing interval
-    autoSlideInterval.current = setInterval(() => {
-      goToNext();
-    }, 5000); // Auto-slide every 5 seconds
-  };
+	const startAutoSlide = () => {
+		stopAutoSlide(); // Clear any existing interval
+		autoSlideInterval.current = setInterval(() => {
+			goToNext();
+		}, 5000); // Auto-slide every 5 seconds
+	};
 
-  const stopAutoSlide = () => {
-    if (autoSlideInterval.current) {
-      clearInterval(autoSlideInterval.current);
-      autoSlideInterval.current = null;
-    }
-  };
+	const stopAutoSlide = () => {
+		if (autoSlideInterval.current) {
+			clearInterval(autoSlideInterval.current);
+			autoSlideInterval.current = null;
+		}
+	};
 
   const goToPrevious = () => {
     stopAutoSlide(); // Reset auto-slide timer
@@ -119,22 +117,22 @@ const Advertisement = () => {
     }
   }, [currentIndex, advertisements])
 
-  if (loading) {
-    return <div>Loading advertisements...</div>;
-  }
+	if (loading) {
+		return <div>Loading advertisements...</div>;
+	}
 
-  if (advertisements.length === 0) {
-    return <div>No advertisements available</div>;
-  }
+	if (advertisements.length === 0) {
+		return <div>No advertisements available</div>;
+	}
 
-  const images = advertisements.map((ad) => ad.imageUrl);
+	const images = advertisements.map((ad) => ad.imageUrl);
 
-  // Calculate visible images
-  const visibleImages = [
-    images[(currentIndex - 1 + images.length) % images.length],
-    images[currentIndex],
-    images[(currentIndex + 1) % images.length],
-  ];
+	// Calculate visible images
+	const visibleImages = [
+		images[(currentIndex - 1 + images.length) % images.length],
+		images[currentIndex],
+		images[(currentIndex + 1) % images.length],
+	];
 
   return (
     <div className="container relative mx-auto flex flex-col items-center justify-center h-screen lg:gap-10 gap-0 w-screen overflow-hidden">
