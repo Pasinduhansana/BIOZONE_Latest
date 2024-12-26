@@ -89,7 +89,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
         >
           {/* Text Section */}
           <div className="max-w-lg mb-8 md:text-left md:mb-0 md:w-3/6 mr-5">
-            <h2 className="mb-4 text-3xl font-medium lg:font-semibold text-gray-[#606060] px-1 md:text-left sm:text-left md:font-semibold md:text-[30px] lg:text-4xl">
+            <h2 className="mb-4 text-3xl font-medium lg:font-semibold text-gray-[#606060] px-1 md:text-left sm:text-left md:font-semibold md:text-[30px] lg:text-3xl">
               {currentContent.readyToElevate}
             </h2>
             <p className="mb-6  text-primarytext3 text-[14px] lg:text-l px-1 md:text-left">
@@ -120,7 +120,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
           </div>
 
           {/* Image Section */}
-          <div className="flex justify-center w-full md:w-1/2">
+          <div className="flex justify-center w-full md:w-1/2 lg:ml-2">
             <img src={Img1} alt="CTA Image" className="rounded-lg shadow-lg" />
           </div>
         </motion.div>

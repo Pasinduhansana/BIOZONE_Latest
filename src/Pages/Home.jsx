@@ -46,7 +46,7 @@ const Home = () => {
         <Gallery />
       </div>
       <FAQ />
-      <AboutUs />
+      {/* <AboutUs /> */}
       <Advertisement />
       <div ref={contactRef}>
         <ContactUs />
