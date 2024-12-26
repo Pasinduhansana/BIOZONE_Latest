@@ -162,14 +162,14 @@ const ContactUs = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <p className="text-gray-500 text-[16px] sm:text-[18px] md:text-base mb-4 text-center lg:text-left">
+            <p className=" font-reddit text-gray-500 text-[16px] sm:text-[18px] md:text-base mb-4 text-center md:text-left">
               {content.intro}
             </p>
 
             <form className="space-y-6 mt-12" onSubmit={handleSubmit}>
               {/* Input Fields */}
               <div className="relative">
-                <label className="absolute left-4 top-[-15px] px-2 bg-white text-black-500 text-[14px] md:text-[16px]">
+                <label className="absolute  left-4 top-[-15px] px-2 bg-white text-black-500 text-[14px] md:text-[16px]">
                   {content.labels.name}
                 </label>
                 <div className="border border-primary1 rounded-[10px] p-2">

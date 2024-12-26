@@ -130,7 +130,6 @@ const Advertisement = () => {
         viewport={{ once: false, amount: 0.5 }}
       >
         <p className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
-
           {currentContent.highlights}
         </p>
         <h2 className="text-2xl xl:text-3xl px-20 lg:px-0 2xl:text-4xl text-primarytext mb-2 font-medium">
@@ -138,10 +137,8 @@ const Advertisement = () => {
         </h2>
         <p className="text-gray-600 mb-3 lg:mb-10 font-sans text-[16px] px-8 lg:px-0 mt-3 xl:text-lg 2xl:text-lg font-thin">
           {currentContent.description}
-
         </p>
       </motion.div>
-
       {/* Desktop Carousel */}
       <motion.div
         className="hidden overflow-hidden relative flex-row lg:flex items-center justify-center gap-4 h-[500px]"
