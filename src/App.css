@@ -45,12 +45,10 @@
 /* background color dots */
 .bg__gradient {
 	filter: blur(180px);
-   transform: translateX(40%) translateY(50%);
-   z-index: -100
- }
- 
+	z-index: -100;
+}
+
 .bg__gradient_main {
 	filter: blur(130px);
-	transform: translateX(250%) translateY(50%);
-   z-index: -100
- }
+	z-index: -100;
+}
