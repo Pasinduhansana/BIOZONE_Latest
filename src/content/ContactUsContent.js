@@ -35,7 +35,7 @@ const contactUsContent = {
       subject: "විෂය",
       message: "පණිවිඩය",
     },
-    getInTouch: "සම්බන්ධ වන්න",
+    getInTouch: "අප සමග සම්බන්ධවන්න",
     description:
       "BioZone හි, අපි ඔබට ඕනෑම ප්‍රශ්න හෝ ප්‍රතිචාර සඳහා උදව් කිරීමට මෙහි සිටිමු. අප හා සම්බන්ධ වන්න - අපි ඔබගෙන් අසා ගැනීමට කැමතියි!",
     contactMethods: {

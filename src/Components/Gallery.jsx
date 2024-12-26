@@ -98,7 +98,7 @@ const Gallery = () => {
   const currentContent = content[language];
 
   return (
-    <section className="relative overflow-hidden bg-white h-full lg:h-[220vh]">
+    <section className="relative overflow-hidden bg-white h-full lg:h-full">
       <div className="relative flex flex-col justify-center w-full h-full py-12 mx-auto ">
         <div className="py-2 flex flex-col  text-center justify-center items-center">
           <h3 className="mb-3 font bg-gradient-to-r from-[#2BC294] to-[#02624C] bg-clip-text text-transparent font-semibold ">

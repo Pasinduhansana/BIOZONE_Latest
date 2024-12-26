@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { VscChevronLeft, VscChevronRight } from "react-icons/vsc";
+import articleContent from "../content/advertisementContent";
 import axios from "axios";
 import { motion } from "framer-motion";
 import content from "../content/advertisementContent";
 
 const Advertisement = () => {
+
 
   const [language, setLanguage] = useState("en");
 
@@ -23,6 +25,15 @@ const Advertisement = () => {
   const [loading, setLoading] = useState(true);
 
   const autoSlideInterval = useRef(null);
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem("language");
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  const content = articleContent[language] || articleContent.en;
 
   useEffect(() => {
     const fetchAdvertisements = async () => {
@@ -69,7 +80,10 @@ const Advertisement = () => {
     startAutoSlide();
     if (!isAnimating) {
       setIsAnimating(true);
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + advertisements.length) % advertisements.length);
+      setCurrentIndex(
+        (prevIndex) =>
+          (prevIndex - 1 + advertisements.length) % advertisements.length
+      );
     }
   };
 
@@ -119,6 +133,7 @@ const Advertisement = () => {
         viewport={{ once: false, amount: 0.5 }}
       >
         <p className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
+
           {currentContent.highlights}
         </p>
         <h2 className="text-2xl xl:text-3xl px-20 lg:px-0 2xl:text-4xl text-primarytext mb-2 font-medium">
@@ -126,6 +141,7 @@ const Advertisement = () => {
         </h2>
         <p className="text-gray-600 mb-3 lg:mb-10 font-sans text-[16px] px-8 lg:px-0 mt-3 xl:text-lg 2xl:text-lg font-thin">
           {currentContent.description}
+
         </p>
       </motion.div>
 
@@ -209,11 +225,7 @@ const Advertisement = () => {
           >
             <VscChevronLeft className="text-gray-500 text-[30px]" />
           </button>
-          <button
-            onClick={goToNext}
-            aria-label="Next slide"
-            className="p-2"
-          >
+          <button onClick={goToNext} aria-label="Next slide" className="p-2">
             <VscChevronRight className="text-gray-500 text-[30px]" />
           </button>
         </div>

@@ -1,147 +1,96 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
-// Reusable component for text with animations
-const AnimatedText = ({
-  children,
-  initial,
-  animate,
-  transition,
-  className,
-}) => (
-  <motion.p
-    className={className}
-    initial={initial}
-    animate={animate}
-    transition={transition}
-  >
-    {children}
-  </motion.p>
-);
+import BackgroundGradientAnimation from "./Elements/BackgroundGradientAnimation";
 
 const AboutUs = () => {
+  const [scrollY, setScrollY] = useState(0); // Track scroll position
+  const [isFrozen, setIsFrozen] = useState(true); // Initially frozen to stop scroll
+
+  // Track scroll position in a scrollable wrapper
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!isFrozen) {
+        setScrollY(window.scrollY); // Update scroll position
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isFrozen]);
+
+  // Control scrolling freeze
+  useEffect(() => {
+    if (isFrozen) {
+      document.body.style.overflow = "hidden"; // Freeze scrolling
+    } else {
+      document.body.style.overflow = "auto"; // Enable scrolling after animation
+    }
+  }, [isFrozen]);
+
+  const handleAnimationComplete = () => {
+    setIsFrozen(false); // Unfreeze scroll after the circle animation completes
+  };
+
+  // Use scroll position to move, scale, and fade the circle
+  const circleTranslateY = scrollY * 0.3; // Adjust speed of movement
+  const circleScale = 1 + scrollY / 1000; // Scale the circle as the user scrolls
+  const circleOpacity = Math.max(1 - scrollY / 1000, 0.5); // Fade out as user scrolls
+
   return (
-    <div className="relative h-screen w-screen flex flex-col items-center justify-center px-4 py-4 overflow-hidden">
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 py-10 ">
-        <div className="bg__gradient w-1/5 h-1/5 absolute inset-0 bg-primary2 mix-blend-multiply filter blur-md rounded-full hidden md:block"></div>
-        <div className="bg__gradient_main w-1/5 h-2/5 absolute inset-0 bg-primary2 mix-blend-multiply filter blur-md rounded-full hidden md:block"></div>
-        <div className="max-w-screen-lg w-full px-4 py-2">
-          {/* First Section */}
-          <div className="flex items-center space-x-4 mb-4">
-            <p className="text-[120px] font-serif  text-gray-500 leading-none">
-              Where
-            </p>
-            <p className="text-gray-700 text-lg max-w-[550px]">
-              Now through this web site, he is ready to guide you towards your
-              academic goals with personalized support and resourses.
-            </p>
-            <p className="text-[120px] font-serif text-gray-500 leading-none">
-              Where
-            </p>
-            <AnimatedText
-              className="text-gray-700 text-lg max-w-[500px]"
-              initial={{ opacity: 1, x: 0, y: 0 }}
-              animate={{ opacity: 1, x: -360, y: 400 }}
-              transition={{ duration: 2.8, ease: "easeInOut" }}
-            >
-              Now through this web site, he is ready to guide you towards your
-              academic goals with personalized support and resources.
-            </AnimatedText>
-          </div>
+    <div className="relative w-screen h-[200vh] flex items-center justify-center overflow-hidden">
+      {/* Background Gradient Animation */}
+      <BackgroundGradientAnimation className="absolute inset-0 z-0" />
 
-          {/* Second Section */}
-          <div className="flex items-center mb-4">
-            <p className="text-[120px] font-serif ml-12 text-gray-800 leading-none">
-              <span className="text-gray-500">Biology and</span>
-              <AnimatedText
-                initial={{ opacity: 1, x: -50, y: 0 }}
-                animate={{ opacity: 0, x: -50, y: 0 }}
-                transition={{ duration: 1.4 }}
-                className="text-gray-500"
-              >
-                Biology and
-              </AnimatedText>
-              <AnimatedText
-                initial={{ opacity: 0, x: 330, y: -120 }}
-                animate={{ opacity: 1, x: 330, y: -120 }}
-                transition={{ duration: 1.4, delay: 1 }}
-                className="text-gray-500"
-              >
-                Biology and
-              </AnimatedText>
-            </p>
-          </div>
-
-          {/* Third Section */}
-          <div className="flex items-center mb-4">
-            <p className="text-[120px] font-serif text-gray-500 leading-none">
-              Technology
-            </p>
-            <p className="text-gray-700 text-lg max-w-[550px]"></p>
-            <div className="flex items-center">
-              <AnimatedText
-                className="text-[120px] font-serif text-gray-500 leading-none"
-                initial={{ opacity: 1, x: 0, y: -110 }}
-                animate={{ opacity: 1, x: 0, y: -110 }}
-                transition={{ duration: 2.8, ease: "easeInOut" }}
-              >
-                Technology
-              </AnimatedText>
-              <AnimatedText
-                className="text-gray-700 text-lg max-w-[550px]"
-                initial={{ opacity: 1, x: 0, y: 0 }}
-                animate={{ opacity: 1, x: -600, y: -250 }}
-                transition={{ duration: 2.8, ease: "easeInOut" }}
-              >
-                His dedication and expertise have made him a trusted mentor for
-                Advanced Level students.
-              </AnimatedText>
-            </div>
-
-            {/* Fourth Section */}
-            <div className="flex items-center mb-4 space-x-4">
-              <p className="text-gray-700 text-lg max-w-[500px]">
-                Graduating from the University of Peradeniya, Dr. Charitha
-                Munasinghe has over 10 years of experience in teaching biology
-                and helping students gain admission to Sri Lanka's top state
-                universities.
-              </p>
-              <p className="text-[120px] font-serif text-gray-500 leading-none">
-                meet
-              </p>
-            </div>
-            <AnimatedText
-              className="text-gray-700 text-lg max-w-[550px]"
-              initial={{ opacity: 1, x: 0, y: 0 }}
-              animate={{ opacity: 1, x: 400, y: -520 }}
-              transition={{ duration: 2.8, ease: "easeInOut" }}
+      {/* Scrollable Wrapper */}
+      <div className="relative w-full h-full overflow-y-scroll">
+        <div
+          className="flex flex-col items-center absolute right-16 top-1/2 transform"
+          style={{ transform: `translateY(${circleTranslateY}px)` }} // Move the div vertically based on scrollY
+        >
+          <div className="flex flex-col justify-center items-center">
+            {/* Arrow */}
+            <motion.div
+              className="flex flex-col justify-center items-center"
+              initial={{ y: -10 }}
+              animate={{ y: 0 }}
+              transition={{
+                duration: 2,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
             >
-              Graduating from the University of Peradeniya, Dr. Charitha
-              Munasinghe has over 10 years of experience in teaching biology and
-              helping students gain admission to Sri Lanka's top state
-              universities.
-            </AnimatedText>
-            <AnimatedText
-              className="text-[120px] font-serif text-gray-500 leading-none"
-              initial={{ opacity: 1, x: 0, y: -110 }}
-              animate={{ opacity: 1, x: 0, y: -110 }}
-              transition={{ duration: 2.8, ease: "easeInOut" }}
-            >
-              meet
-            </AnimatedText>
-          </div>
+              {/* Tail */}
+              <div className="w-[2px] h-20 bg-gray-600 mt-2" />
+              <div className="w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-600" />
+            </motion.div>
 
-          {/* Fifth Section */}
-          <div className="flex items-center mb-4 space-x-4">
-            <AnimatedText
-              className="text-gray-700 text-lg max-w-[350px]"
-              initial={{ opacity: 0, x: 650, y: -330 }}
-              animate={{ opacity: 1, x: 650, y: -330 }}
-              transition={{ duration: 1.4, ease: "easeInOut", delay: 1 }}
+            {/* Circle */}
+            <motion.div
+              className="w-8 h-8 absolute bg-transparent border-[1.5px] border-gray-700 rounded-full mt-4 flex items-center justify-center"
+              initial={{ scale: 0.5 }}
+              animate={{ scale: circleScale }} // Animate scale based on scroll
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
+              style={{ opacity: circleOpacity }} // Change opacity based on scroll
+              onAnimationComplete={handleAnimationComplete} // Trigger unfreeze on animation complete
             >
-              His dedication and expertise have made him a trusted mentor for
-              Advanced Level students.
-            </AnimatedText>
+              <motion.div
+                className="w-6 h-6 bg-transparent border-[1.5px] border-gray-700 rounded-full"
+                initial={{ scale: 0.5 }}
+                animate={{ scale: circleScale }} // Inner circle scaling with outer circle
+                transition={{
+                  duration: 0.3,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              ></motion.div>
+            </motion.div>
           </div>
         </div>
       </div>

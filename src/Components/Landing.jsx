@@ -53,7 +53,7 @@ const Landing = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h1 className="lg:w-72 text-[35px] xl:text-[52px] mt-2 lg:mt-0 2xl:text-[64px] font-semibold leading-tight ease-linear">
+          <h1 className="lg:w-[350px] text-[35px] xl:text-[52px] mt-2 lg:mt-0 2xl:text-[64px] font-semibold leading-tight ease-linear ">
             {currentContent.title}
           </h1>
         </motion.div>
