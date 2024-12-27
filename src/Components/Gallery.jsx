@@ -419,7 +419,7 @@ const Gallery = () => {
 							viewport={{ once: true, amount: 0.1 }}
 						>
 							<p className="text-4xl text-center ">
-								<animated.span>
+								<animated.span className={`${language === "si" ? "font-poppins" : ""}`}>
 									{animatedCounter2.number.to((n) => `${n.toFixed(0)}+`)}
 								</animated.span>
 							</p>
@@ -473,7 +473,7 @@ const Gallery = () => {
 							<p className="text-2xl text-center">
 								{currentContent.completedJourney}
 								<br />
-								<animated.span>
+								<animated.span className={`${language === "si" ? "font-poppins" : ""}`}>
 									{animatedCounter1.number.to((n) => `${n.toFixed(0)}Y+`)}
 								</animated.span>
 							</p>
@@ -570,7 +570,7 @@ const Gallery = () => {
 								{currentContent.galleryView}
 								<br />
 								<br />
-								<animated.span>
+								<animated.span className={`${language === "si" ? "font-poppins" : ""}`}>
 									{animatedCounter3.number.to((n) => `${n.toFixed(0)}+`)}
 								</animated.span>
 							</p>
@@ -600,11 +600,11 @@ const Gallery = () => {
 							viewport={{ once: true, amount: 0.1 }}
 						>
 							<p className="text-4xl text-center ">
-								<animated.span>
+								<animated.span className={`${language === "si" ? "font-poppins" : ""}`}>
 									{animatedCounter3.number.to((n) => `${n.toFixed(0)}+`)}
 								</animated.span>
 							</p>
-							<p className="px-12 text-4xl">|</p>
+							<p className={`px-12 text-4xl ${language === "si" ? "font-poppins" : ""}`}>|</p>
 							<p className="text-lg text-center">
 								{currentContent.resgisteduser}
 							</p>
