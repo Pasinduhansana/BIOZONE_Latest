@@ -81,32 +81,36 @@ const Map = () => {
 					viewport={{ once: true, amount: 0.3 }}
 				>
 					{data.map((institute, index) => (
-						<div
-							key={index}
-							className={`rounded-[16px] overflow-hidden transform transition-all  duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer w-[90vw] h-[340px] lg:h-[17vw] lg:w-[28vw] ${language === "si" ? "font-poppins" : ""}`}
-							style={{
-								backgroundImage: `url(${mapimages[index]})`,
-								backgroundSize: "cover",
-							}}
-							onClick={() => openModal(institute)}
-						>
-							<div className={`absolute bottom-0 w-full h-[110px] p-2 pl-5   mt-2 bg-[#FFFFFF99] backdrop-blur-[10px] flex flex-col gap-1 border-none ${language === "si" ? "font-reddit" : ""}`}>
-								<h2 className="text-[20px] xl:text-[24px] 2xl:text-[26px]  text-[#090909] font-[500]">
-									{institute.locationName}
-								</h2>
-								<p className="text-[14px] xl:text-[15px] 2xl:text-[16px] font-normal text-[#606060]">
-									{institute.address}
-								</p>
-								<a
-									className="text-primary2 hover:text-primaryHover1 text-[14px] xl:text-[15px] 2xl:text-[16px] flex items-center  transition-all duration-300 hover:scale-[1.02]"
-									onClick={() => openModal(institute)}
-								>
-									{content.viewTimetable}
-									<VscArrowRight />
-								</a>
-							</div>
-						</div>
-					))}
+            <div
+              key={index}
+              className={`rounded-[16px] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer w-[90vw] h-[340px] lg:h-[17vw] lg:w-[28vw] ${language === "si" ? "font-poppins" : ""}`}
+              onClick={() => openModal(institute)}
+            >
+              <div
+                className="w-full h-full"
+                style={{
+                  backgroundImage: `url(${mapimages[index]})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              ></div>
+              <div className={`absolute bottom-0 w-full h-[110px] p-2 pl-5 mt-2 bg-[#FFFFFF99] backdrop-blur-[10px] flex flex-col gap-1 border-none rounded-b-[16px] ${language === "si" ? "font-reddit" : ""}`}>
+                <h2 className="text-[20px] xl:text-[24px] 2xl:text-[26px] text-[#090909] font-[500]">
+                  {institute.locationName}
+                </h2>
+                <p className="text-[14px] xl:text-[15px] 2xl:text-[16px] font-normal text-[#606060]">
+                  {institute.address}
+                </p>
+                <a
+                  className="text-primary2 hover:text-primaryHover1 text-[14px] xl:text-[15px] 2xl:text-[16px] flex items-center transition-all duration-300 hover:scale-[1.02]"
+                  onClick={() => openModal(institute)}
+                >
+                  {content.viewTimetable}
+                  <VscArrowRight />
+                </a>
+              </div>
+            </div>
+          ))}
 				</motion.div>
 			</div>
 
