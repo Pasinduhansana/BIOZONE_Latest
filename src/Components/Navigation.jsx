@@ -74,7 +74,7 @@ const Navigation = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
   const sectionRefs = [homeRef, locationsRef, galleryRef, contactRef];
 
   return (
-    <nav className={`shadow-md w-screen overflow-hidden ${language === "si" ? "font-indumathi" : ""}`}>
+    <nav className={`shadow-md w-screen overflow-hidden`}>
       <div className="navcard 2xl:px-56 xl:px-36 px-5 w-full h-16 lg:h-auto  bg-[#f9fefca9] backdrop-blur-[20px] py-4 lg:flex items-center justify-between shadow-sm fixed top-0 left-0 z-50">
         {/* Logo */}
         <div className="flex flex-row justify-between z-50 -mt-3">

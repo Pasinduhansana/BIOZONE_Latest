@@ -91,9 +91,11 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 					<div className="max-w-lg mb-8 md:text-left md:mb-0 w-auto md:w-2/6">
 						<h2 className="mb-4 text-3xl font-medium lg:font-semibold text-gray-[#606060] px-1 md:text-left sm:text-left lg:text-left text-center md:font-semibold md:text-[30px] lg:text-3xl">
 							{currentContent.readyToElevate}
+							{<span className={`${language === "si" ? "font-poppins" : "hidden"}`}>?</span>}
 						</h2>
 						<p className="mb-6  text-primarytext3 text-[14px] lg:text-l md:text-left text-center lg:text-left">
 							{currentContent.startJourney}
+							<span className={`${language === "si" ? "font-poppins" : ""}`}>!</span>
 						</p>
 						{/* Buttons */}
 						<div className="flex flex-col w-full lg:flex-row gap-2 lg:gap-5">
@@ -232,7 +234,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 						</div>
 						{/* Copyright */}
 						<p className=" text-[13px] lg:text-sm text-center md:text-left text-[#008661] sm:text-base">
-							© 2024 BioZone by Webminds. All rights reserved.
+							<span className={`${language === "si" ? "font-popins" : ""}`}>© 2024 BioZone by Webminds. All rights reserved.</span>
 						</p>
 					</div>
 				</footer>

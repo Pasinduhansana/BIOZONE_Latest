@@ -51,11 +51,11 @@ const FAQ = () => {
 					</motion.div>
 
 					{/* FAQ Section */}
-					<div className="space-y-4 pb-20 lg:mt-10 lg:w-[45vw] w-[90vw]">
+					<div className="space-y-4 pb-20 lg:mt-10 lg:w-[45vw] w-[90vw] ">
 						{faqs.map((faq, index) => (
 							<motion.div
 								key={index}
-								className="border-b border-gray-300"
+								className={`border-b border-gray-300 ${language === "si" ? "font-poppins" : ""}`}
 								initial={{ opacity: 0, y: 50 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.5, delay: index * 0.1 }}
