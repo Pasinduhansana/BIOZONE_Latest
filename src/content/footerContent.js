@@ -17,7 +17,7 @@ const content = {
   },
   si: {
     readyToElevate: "ඔබේ ජීව විද්‍යා දැනුම ගෝලීය මට්ටමට උසස් කිරීමට සූදානම්ද",
-    startJourney: "ඔබේ ජීව විද්‍යා ගමන අදම ආරම්භ කරන්න!",
+    startJourney: "ඔබේ ජීව විද්‍යා ගමන අදම ආරම්භ කරන්න",
     onlineStudentPortal: "මාර්ගගත ශිෂ්‍ය පෝර්ටලය",
     viewTimetables: "කාලසටහන් බලන්න",
     navigation: "සංචාලනය",
