@@ -196,7 +196,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 
             {/* Newsletter Section */}
             <div className="order-first md:w-full md:mt-10 lg:mt-0 text-center md:text-left md:order-none lg:w-2/6 mb-5 z-40">
-              <div className="w-full px-4 sm:px-0 text-primarytext3 mb-4 font-thin">
+              <div className="w-full px-7 sm:px-0 text-primarytext3 mb-4 font-thin">
                 {currentContent.newsletter}
               </div>
               <div className="flex flex-col items-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 px-10 lg:px-0 lg:pr-5">
