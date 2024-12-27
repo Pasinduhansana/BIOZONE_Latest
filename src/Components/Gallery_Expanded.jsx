@@ -128,7 +128,7 @@ export default function App() {
 				<div className="relative overflow-hidden bg-white h-full lg:h-full">
 					<div className="relative flex flex-col justify-center w-full h-full py-12 mx-auto gap-8">
 						<div className="py-2 flex flex-col  text-center justify-center items-center mt-5">
-							<h3 className="text-primary1 text-[14px] md:text-[15px] lg:text-[18px] font-[400] lg:font-[500] mb-2">
+							<h3 className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
 								{currentContent.gallery}
 							</h3>
 							<h1 className="font-reddit text-[28px] xl:text-[40px] 2xl:text-[48px] text-primarytext mb-2 font-medium w-auto lg:text-nowrap">

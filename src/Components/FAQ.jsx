@@ -39,7 +39,7 @@ const FAQ = () => {
 						transition={{ duration: 0.5 }}
 						viewport={{ once: true, amount: 0.3 }}
 					>
-						<p className=" text-primary1 text-[14px] md:text-[15px] lg:text-[18px] font-[400] lg:font-[500] mb-2">
+						<p className=" text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
 							{content.support}
 						</p>
 						<h2 className="font-reddit text-[28px] xl:text-[40px] 2xl:text-[48px] text-primarytext mb-2 font-medium w-auto lg:text-nowrap">

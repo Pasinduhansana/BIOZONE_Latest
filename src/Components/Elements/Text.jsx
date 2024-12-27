@@ -48,7 +48,7 @@ const Text = () => {
 							className={"-translate-y-[0%] lg:translate-y-[-10%]"}
 						/>
 						<div className="hidden  lg:flex flex-col justify-start items-center lg:h-[70vh] w-full md:w-[1000px] gap-5 z-50 px-4 md:px-0">
-							<p className=" text-primary1 text-[14px] md:text-[15px] lg:text-[18px] font-[400] lg:font-[500] mb-10">
+							<p className=" text-green-600 font-reddit uppercase text-sm font-semibold mb-10">
 								{currentContent.topic}
 							</p>
 
@@ -141,7 +141,7 @@ const Text = () => {
 								viewport={{ once: true, amount: 0.3 }}
 								useInView={section1InView}
 							>
-								<p className=" text-primary1 text-[14px] md:text-[15px] lg:text-[18px] font-[400] lg:font-[500]">
+								<p className="text-green-600 font-reddit uppercase text-sm font-semibold mb-10">
 									{currentContent.topic}
 								</p>
 								{/* 1st Row - total Column */}
@@ -196,7 +196,7 @@ const Text = () => {
 							className={"-translate-y-[0%] lg:translate-y-[-10%]"}
 						/>
 						<div className="hidden  lg:flex flex-col justify-start items-center lg:h-[70vh] w-full md:w-[1000px] gap-5 z-50 px-4 md:px-0">
-							<p className=" text-primary1 text-[14px] md:text-[15px] lg:text-[18px] font-[400] lg:font-[500] mb-10">
+							<p className=" text-green-600 font-reddit uppercase text-sm font-semibold mb-10">
 								{currentContent.topic}
 							</p>
 							<motion.div
@@ -292,7 +292,7 @@ const Text = () => {
 								viewport={{ once: true, amount: 0.3 }}
 								useInView={section1InView}
 							>
-								<p className=" text-primary1 text-[14px] md:text-[15px] lg:text-[18px] font-[400] lg:font-[500]">
+								<p className=" text-green-600 font-reddit uppercase text-sm font-semibold mb-10">
 									{currentContent.topic}
 								</p>
 								{/* 1st Row - total Column */}
