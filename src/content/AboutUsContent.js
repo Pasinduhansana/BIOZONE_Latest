@@ -19,7 +19,7 @@ const aboutUsContent = {
 
     title5: "",
     description5:
-      "His dedication and expertise have made him a trusted mentor for Advanced Level students.",
+      "With his deep knowledge of biology and passion for teaching, he inspires many students to succeed.",
   },
   si: {
     topic: "අපි කවුද",
@@ -40,7 +40,7 @@ const aboutUsContent = {
 
     title5: "",
     description5:
-      "ඔහුගේ කැපවීම සහ විශේෂඥතාවය ඔහුව උසස් පෙළ සිසුන් සඳහා විශ්වාසනීය උපදේශකයෙකු කර ඇත.",
+      "ජීව විද්‍යාව පිළිබඳ ගැඹුරු අවබෝධයක් සහ ඉගැන්වීමේ ආශාවක් ඇති ඔහු, අධ්‍යයන සාර්ථකත්වය ළඟා කර ගැනීම සඳහා අසංඛ්‍යාත සිසුන්ට දිරිගන්වයි.",
   },
 };
 

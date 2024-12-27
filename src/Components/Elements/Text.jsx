@@ -89,7 +89,7 @@ const Text = () => {
 
 							</motion.div>
 							<motion.div
-								className="flex flex-col md:flex-row justify-between items-center w-full"
+								className="flex flex-col md:flex-row justify-between items-center w-full gap-0"
 								initial={{ opacity: 0, y: 50 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.6, delay: 0.9 }}
@@ -100,7 +100,7 @@ const Text = () => {
 									{currentContent.title4}
 								</p>
 								<p
-									className="text-gray-900 text-base md:text-lg lg:text-xl max-w-full md:max-w-[500px] lg:max-w-full animate-orbit4 delay-[400ms] gap-20  font-thin"
+									className="text-gray-900 text-base md:text-lg lg:text-xl max-w-full md:max-w-[500px] lg:max-w-full animate-orbit4 delay-[400ms] gap-20 font-thin"
 									initial={{ opacity: 0, x: 0, y: 0 }}
 									animate={{ opacity: 1, x: -360, y: 440 }}
 									transition={{ duration: 2.8, ease: "easeInOut" }}
@@ -160,7 +160,7 @@ const Text = () => {
 									{currentContent.title1}
 								</h1>
 
-								<div className="flex flex-col md:flex-row justify-between items-center gap-20 w-full">
+								<div className="flex flex-col md:flex-row justify-between items-center w-full gap-20">
 									<p
 										className="text-gray-900 text-sm font-thin md:text-lg lg:text-xl text-center max-w-full md:max-w-[500px] lg:max-w-full animate-orbit7 delay-[200ms]"
 										initial={{ opacity: 0, x: 0, y: 0 }}
@@ -183,7 +183,7 @@ const Text = () => {
 										animate={{ opacity: 1, x: -360, y: 440 }}
 										transition={{ duration: 2.8, ease: "easeInOut" }}
 									>
-										{currentContent.description1}
+										{currentContent.description4}
 									</p>
 								</div>
 							</motion.div>
@@ -260,7 +260,7 @@ const Text = () => {
 									initial={{ opacity: 0, x: 0, y: 0 }}
 									animate={{ opacity: 1, x: -360, y: 440 }}
 									transition={{ duration: 2.8, ease: "easeInOut" }}
-								>{currentContent.description3}
+								>{currentContent.description5}
 								</p>
 							</motion.div>
 							<motion.div
@@ -326,7 +326,7 @@ const Text = () => {
 										animate={{ opacity: 1, x: -360, y: 440 }}
 										transition={{ duration: 2.8, ease: "easeInOut" }}
 									>
-										{currentContent.description3}
+										{currentContent.description5}
 									</p>
 									<p
 										className="text-gray-900  text-sm md:text-lg font-thin lg:text-xl max-w-full text-center md:max-w-[500px] lg:max-w-full animate-orbit4 delay-[400ms]"
@@ -334,7 +334,7 @@ const Text = () => {
 										animate={{ opacity: 1, x: -360, y: 440 }}
 										transition={{ duration: 2.8, ease: "easeInOut" }}
 									>
-										{currentContent.description1}
+										{currentContent.description4}
 									</p>
 								</div>
 							</motion.div>
