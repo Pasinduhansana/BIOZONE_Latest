@@ -233,7 +233,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 						</div>
 						{/* Copyright */}
 						<p className=" text-[13px] lg:text-sm text-center md:text-left text-[#008661] sm:text-base">
-							© 2024 BioZone by Webminds. All rights reserved.
+							<span className={`${language === "si" ? "font-popins" : ""}`}>© 2024 BioZone by Webminds. All rights reserved.</span>
 						</p>
 					</div>
 				</footer>

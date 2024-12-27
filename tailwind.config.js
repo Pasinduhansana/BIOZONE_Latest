@@ -4,8 +4,9 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				reddit: ['"Reddit Sans"', "sans-serif"],
+				reddit: ['Reddit Sans', "sans-serif"],
 				indumathi: ['Indumathi', 'Arial', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif'],
 			},
 			colors: {
 				primarytext: "#383838", //Back text colour
