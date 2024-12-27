@@ -72,7 +72,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 	};
 
 	return (
-		<div className={`relative flex flex-col w-full items-center justify-center overflow-hidden ${language === "si" ? "font-indumathi" : ""}`}>
+		<div className={`relative flex flex-col w-full items-center justify-center overflow-hidden`}>
 			{/* <img
 				src={bgimg}
 				alt="bgimage"
