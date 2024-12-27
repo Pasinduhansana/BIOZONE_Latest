@@ -19,9 +19,9 @@ const content = {
     institutes: "ආයතන",
     institutesDescription: "සැහැල්ලු සූම් පන්ති සමඟ",
     startJourney: "ඔබේ ගමන අදම ආරම්භ කරන්න!",
-    onlineStudentPortal: "අන්තර්ජාල සිසුන් පෝර්ටල්",
+    onlineStudentPortal: "මාර්ගගත ශිෂ්‍ය පෝර්ටලය",
     viewTimetables: "කාලසටහන් බලන්න",
-    conducting: "ඉංග්‍රීසි | සිංහල භාෂාවෙහි පැමිණිලිය",
+    conducting: "ඉංග්‍රීසි | සිංහල භාෂාවෙන් පවත්වයි",
   },
 };
 

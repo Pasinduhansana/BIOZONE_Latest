@@ -14,6 +14,16 @@
     url("./Assest/Fonts/4u-indumathi.ttf") format("truetype");
 }
 
+/* use for headers */
+@font-face {
+  font-family: "Amantha";
+  font-style: normal;
+  font-weight: normal;
+  src: 
+    local("4u-Amantha"),
+    url("./Assest/Fonts/4u-Amantha.ttf") format("truetype");
+}
+
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;

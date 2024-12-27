@@ -23,7 +23,7 @@ const content = {
     navigation: "සංචාලනය",
     navLinks: ["මුල් පිටුව", "ගැලරිය", "ස්ථානය", "අප අමතන්න"],
     socials: "සමාජ මාධ්‍ය",
-    socialLinks: ["ෆේස්බුක්", "ඉන්ස්ටග්‍රෑම්", "යූටියුබ්", "ටිකටොක්"],
+    socialLinks: ["ෆේස්බුක්", "ඉන්ස්ටග්‍රෑම්", "යූටියුබ්", "ටික්ටොක්"],
     features: "විශේෂාංග",
     featureLinks: ["Timetable", "Theory", "Papers", "Revision"],
     newsletter:
