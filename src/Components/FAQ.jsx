@@ -23,7 +23,7 @@ const FAQ = () => {
 	const faqs = content.questions || [];
 
 	return (
-		<div className="relative w-full lg:min-h-screen py-10 lg:py-0 h-full flex items-center justify-center overflow-hidden">
+		<div className={`relative w-full lg:min-h-screen py-10 lg:py-0 h-full flex items-center justify-center overflow-hidden ${language === "si" ? "font-indumathi" : ""}`}>
 			<img
 				src={bgImage}
 				alt="Background"
@@ -39,7 +39,7 @@ const FAQ = () => {
 						transition={{ duration: 0.5 }}
 						viewport={{ once: true, amount: 0.3 }}
 					>
-						<p className=" text-primary1 text-[14px] md:text-[15px] lg:text-[18px] font-[400] lg:font-[500] mb-2">
+						<p className=" text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
 							{content.support}
 						</p>
 						<h2 className="font-reddit text-[28px] xl:text-[40px] 2xl:text-[48px] text-primarytext mb-2 font-medium w-auto lg:text-nowrap">
@@ -51,11 +51,11 @@ const FAQ = () => {
 					</motion.div>
 
 					{/* FAQ Section */}
-					<div className="space-y-4 pb-20 lg:mt-10 lg:w-[45vw] w-[90vw]">
+					<div className="space-y-4 pb-20 lg:mt-10 lg:w-[45vw] w-[90vw] ">
 						{faqs.map((faq, index) => (
 							<motion.div
 								key={index}
-								className="border-b border-gray-300"
+								className={`border-b border-gray-300 ${language === "si" ? "font-poppins" : ""}`}
 								initial={{ opacity: 0, y: 50 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.5, delay: index * 0.1 }}

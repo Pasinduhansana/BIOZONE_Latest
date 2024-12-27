@@ -6,11 +6,11 @@ const advertisementContent = {
       "Discover the latest highlights, schedules, and topics from our classes. These showcase important events, learning opportunities, and updates for students.",
   },
   si: {
-    highlights: "විශේෂාංග",
-    title: "ප්‍රධාන විශේෂාංග",
+    highlights: "ප්‍රධාන විශේෂාංග",
+    title: "අදාල විශේෂාංග",
     description:
-      "අපගේ පන්තිවලින් නවතම විශේෂාංග, කාලසටහන් සහ මාතෘකා සොයා ගන්න. මෙය සිසුන් සඳහා වැදගත් සිදුවීම්, ඉගෙනුම් අවස්ථා සහ යාවත්කාලීන කිරීම් පෙන්වයි.",
-  },
+      "අපගේ පන්තිවල නවතම ප්‍රධාන සිදුවීම්, කාලසටහන් සහ විෂයයන් සොයා බලන්න. මෙයින් සිසුන් සඳහා ඉගෙනුම් අවස්ථා, වැදගත් සිදුවීම් සහ යාවත්කාලීන තොරතුරු ලබා ගත හැක.",
+  }  
 };
 
 export default advertisementContent;

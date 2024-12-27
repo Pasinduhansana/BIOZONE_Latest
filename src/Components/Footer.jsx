@@ -72,7 +72,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 	};
 
 	return (
-		<div className="relative flex flex-col w-full items-center justify-center overflow-hidden ">
+		<div className={`relative flex flex-col w-full items-center justify-center overflow-hidden ${language === "si" ? "font-indumathi" : ""}`}>
 			{/* <img
 				src={bgimg}
 				alt="bgimage"
@@ -91,9 +91,11 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 					<div className="max-w-lg mb-8 md:text-left md:mb-0 w-auto md:w-2/6">
 						<h2 className="mb-4 text-3xl font-medium lg:font-semibold text-gray-[#606060] px-1 md:text-left sm:text-left lg:text-left text-center md:font-semibold md:text-[30px] lg:text-3xl">
 							{currentContent.readyToElevate}
+							{<span className={`${language === "si" ? "font-poppins" : "hidden"}`}>?</span>}
 						</h2>
 						<p className="mb-6  text-primarytext3 text-[14px] lg:text-l md:text-left text-center lg:text-left">
 							{currentContent.startJourney}
+							<span className={`${language === "si" ? "font-poppins" : ""}`}>!</span>
 						</p>
 						{/* Buttons */}
 						<div className="flex flex-col w-full lg:flex-row gap-2 lg:gap-5">
@@ -194,32 +196,32 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 							</div>
 						</div>
 
-						{/* Newsletter Section */}
-						<div className="order-first md:w-full md:mt-10 lg:mt-0 text-center md:text-left md:order-none lg:w-2/6 mb-5 z-40">
-							<h3 className="mb-4 text-primarytext3 md:text-center lg:text-left font-thin text-[15px] px-10 lg:px-0 lg:text-[16px]">
-								{currentContent.newsletter}
-							</h3>
-							<div className="flex flex-col items-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 px-10 lg:px-0 lg:pr-5">
-								<input
-									type="email"
-									placeholder={currentContent.enterEmail}
-									value={email}
-									onChange={(e) => setEmail(e.target.value)}
-									className="flex-1 w-[92vw] lg:w-full px-4 lg:px-2 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primaryHover1"
-								/>
-								<div className="flex items-center justify-center ">
-									<button
-										className="text-primarytextwhite bg-gradient-to-r from-primary1 to-primary2  hover:scale-[1.02] rounded-[6px] h-[40px] w-[92vw] md:w-[170px] lg:w-auto lg:px-2 hover:text-white font-normal transition-all duration-200"
-										onClick={handleNewsletterSubmit}
-									>
-										{currentContent.submit}
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					{/* Divider */}
-					<div className="my-6 border-t border-gray-200"></div>
+            {/* Newsletter Section */}
+            <div className="order-first md:w-full md:mt-10 lg:mt-0 text-center md:text-left md:order-none lg:w-2/6 mb-5 z-40">
+              <div className="w-full px-7 sm:px-0 text-primarytext3 mb-4 font-thin">
+                {currentContent.newsletter}
+              </div>
+              <div className="flex flex-col items-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 px-10 lg:px-0 lg:pr-5">
+                <input
+                  type="email"
+                  placeholder={currentContent.enterEmail}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 w-[92vw] lg:w-full px-4 lg:px-2 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primaryHover1"
+                />
+                <div className="flex items-center justify-center ">
+                  <button
+                    className="text-primarytextwhite bg-gradient-to-r from-primary1 to-primary2  hover:scale-[1.02] rounded-[6px] h-[40px] w-[92vw] md:w-[170px] lg:w-auto lg:px-2 hover:text-white font-normal transition-all duration-200"
+                    onClick={handleNewsletterSubmit}
+                  >
+                    {currentContent.submit}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Divider */}
+          <div className="my-6 border-t border-gray-200"></div>
 
 					{/* Footer Bottom */}
 					<div className="flex flex-col items-center justify-between space-y-4 text-primarytext3 md:space-y-0 md:flex-row">
@@ -232,7 +234,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 						</div>
 						{/* Copyright */}
 						<p className=" text-[13px] lg:text-sm text-center md:text-left text-[#008661] sm:text-base">
-							© 2024 BioZone by Webminds. All rights reserved.
+							<span className={`${language === "si" ? "font-popins" : ""}`}>© 2024 BioZone by Webminds. All rights reserved.</span>
 						</p>
 					</div>
 				</footer>

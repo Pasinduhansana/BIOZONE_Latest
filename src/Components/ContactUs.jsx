@@ -152,7 +152,7 @@ const ContactUs = () => {
 	};
 
 	return (
-		<div className="relative w-full flex items-center justify-center overflow-hidden">
+		<div className={`relative w-full flex items-center justify-center overflow-hidden ${language === "si" ? "font-indumathi" : ""}`}>
 			<div className="px-4 md:px-10 lg:px-10 xl:px-52 relative h-auto lg:h-full md:h-full flex items-center justify-center">
 				{/* Container */}
 				<div className="flex flex-col md:flex-col lg:flex-row lg:justify-evenly items-center gap-10 px-6 py-0 lg:py-12 mx-auto ">
@@ -165,6 +165,7 @@ const ContactUs = () => {
 						viewport={{ once: true, amount: 0.3 }}
 					>
 						<p className=" font-reddit text-gray-500 text-[16px] sm:text-[18px] md:text-base mb-4 text-center md:text-left">
+							<span className={`${language === "si" ? "font-poppins" : ""}`}>BioZone </span>
 							{content.intro}
 						</p>
 
@@ -266,7 +267,9 @@ const ContactUs = () => {
 							{content.getInTouch}
 						</h2>
 						<p className="text-gray-500 text-center text-sm sm:text-base mb-6">
-							{content.description}
+							<span className={`${language === "si" ? "font-poppins" : ""}`}>
+								{content.description}
+							</span>
 						</p>
 
 						{/* Contact Cards */}
@@ -278,10 +281,14 @@ const ContactUs = () => {
 								</span>
 								<div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-5 text-wrap overflow-hidden">
 									<p className="text-black font-semibold text-sm sm:font-medium">
-										{content.contactMethods.email}
+										<span className={`${language === "si" ? "font-poppins" : ""}`}>
+											{content.contactMethods.email}
+										</span>
 									</p>
 									<p className="text-black font-light text-xs sm:text-[14px] opacity-70 text-wrap w-full">
-										info@charithamunasinghe.lk
+										<span className={`${language === "si" ? "font-poppins" : ""}`}>
+											info@charithamunasinghe.lk
+										</span>
 									</p>
 								</div>
 							</div>
@@ -296,7 +303,7 @@ const ContactUs = () => {
 										{content.contactMethods.call}
 									</p>
 									<p className="text-black font-light text-xs sm:text-sm opacity-70">
-										+94 77 721 9676
+										<span className={`${language === "si" ? "font-poppins" : ""}`}>+94 77 721 9676</span>
 									</p>
 								</div>
 							</div>
@@ -335,11 +342,19 @@ const ContactUs = () => {
 						{/* Action Buttons */}
 						<div className="flex flex-col sm:flex-row gap-6 lg:gap-x-[50px] md:justify-center md:gap-18 w-full">
 							<SecondarySubmitButton1
-								TextContent={content.actionButtons.whatsapp}
+								TextContent={
+									<span className={`${language === "si" ? "font-poppins" : ""}`}>
+										{content.actionButtons.whatsapp}
+									</span>
+								}
 								onClick={handleWhatsAppClick}
 							/>
 							<SecondarySubmitButton1
-								TextContent={content.actionButtons.telegram}
+								TextContent={
+									<span className={`${language === "si" ? "font-poppins" : ""}`}>
+										{content.actionButtons.telegram}
+									</span>
+								}
 								onClick={handleTelegramClick}
 							/>
 						</div>

@@ -117,42 +117,44 @@ const Advertisement = () => {
 		images[(currentIndex + 1) % images.length],
 	];
 
-	return (
-		<div className="container mt-0 lg:mt-24 relative mx-auto flex flex-col items-center justify-center h-auto lg:pt-0 pt-10 lg:h-screen lg:gap-10 gap-0 w-screen overflow-hidden px-5 lg:px-0">
-			{/* Header */}
-			<motion.div
-				className="text-center flex flex-col justify-center items-center"
-				initial={{ opacity: 0, y: 50 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5 }}
-				viewport={{ once: false, amount: 0.5 }}
-			>
-				<p className=" text-primary1 text-[14px] md:text-[15px] lg:text-[18px] font-[400] lg:font-[500] mb-2">
-					{currentContent.highlights}
-				</p>
-				<h2 className="font-reddit text-[28px] xl:text-[40px] 2xl:text-[48px] text-primarytext mb-2 font-medium w-auto lg:text-nowrap">
-					{currentContent.title}
-				</h2>
-				<p className="text-gray-500 mb-10 font-sans text-[14px] xl:text-[18px] 2xl:text-[18px]">
-					{currentContent.description}
-				</p>
-			</motion.div>
-			{/* Desktop Carousel */}
-			<motion.div
-				className="hidden overflow-hidden relative flex-row lg:flex items-center justify-center gap-4 h-[500px]"
-				initial={{ opacity: 0, y: 50 }}
-				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.5, delay: 0.2 }}
-				viewport={{ once: true, amount: 0.1 }}
-			>
-				{/* Previous Button */}
-				<button
-					onClick={goToPrevious}
-					className="absolute top-1/2 left-4 z-10 bg-white bg-opacity-50 rounded-full transform -translate-y-1/2"
-					aria-label="Previous slide"
-				>
-					<VscChevronLeft className="text-gray-500 text-[55px]" />
-				</button>
+  return (
+    <div className="container relative mx-auto flex flex-col items-center justify-center h-screen lg:gap-10 gap-0 w-screen overflow-hidden">
+      {/* Header */}
+      <motion.div
+        className="text-center flex flex-col justify-center items-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: false, amount: 0.5 }}
+      >
+        <p className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
+          {currentContent.highlights}
+        </p>
+        <h2 className="text-2xl xl:text-3xl px-20 lg:px-0 2xl:text-4xl text-primarytext mb-2 font-medium">
+          {currentContent.title}
+        </h2>
+        <p className="text-gray-600 mb-3 lg:mb-10 font-sans text-[16px] px-8 lg:px-0 mt-3 xl:text-lg 2xl:text-lg font-thin">
+          {currentContent.description}
+
+        </p>
+      </motion.div>
+
+      {/* Desktop Carousel */}
+      <motion.div
+        className="hidden overflow-hidden relative flex-row lg:flex items-center justify-center gap-4 h-[500px]"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        {/* Previous Button */}
+        <button
+          onClick={goToPrevious}
+          className="absolute top-1/2 left-12 z-10 bg-white bg-opacity-50 rounded-full transform -translate-y-1/2"
+          aria-label="Previous slide"
+        >
+          <VscChevronLeft className="text-gray-500 text-[55px]" />
+        </button>
 
 				{/* Carousel Content */}
 				<div className="overflow-hidden px-2 lg:w-[1214px] h-full flex flex-row items-center">

@@ -39,12 +39,12 @@ const AboutUs = () => {
   const circleOpacity = Math.max(1 - scrollY / 1000, 0.5); // Fade out as user scrolls
 
   return (
-    <div className="relative w-screen h-[200vh] flex items-center justify-center overflow-hidden">
+    <div className={`relative flex items-center justify-center overflow-hidden ${language === "si" ? "font-indumathi" : ""}`}>
       {/* Background Gradient Animation */}
       <BackgroundGradientAnimation className="absolute inset-0 z-0" />
 
       {/* Scrollable Wrapper */}
-      <div className="relative w-full h-full overflow-y-scroll">
+      <div className="relative w-full h-full overflow-y-scroll z-20">
         <div
           className="flex flex-col items-center absolute right-16 top-1/2 transform"
           style={{ transform: `translateY(${circleTranslateY}px)` }} // Move the div vertically based on scrollY

@@ -110,7 +110,7 @@ export default function App() {
 
 	return (
 		<>
-			<nav className="shadow-md w-screen overflow-hidden">
+			<nav className={`shadow-md w-screen overflow-hidden ${language === "si" ? "font-indumathi" : ""}`}>
 				<div className="navcard 2xl:px-56 xl:px-36 px-5 w-full h-16 lg:h-auto  bg-[#f9fefca9] backdrop-blur-[20px] py-3 pt-6 lg:flex items-center justify-between shadow-sm fixed top-0 left-0 z-50">
 					{/* Logo */}
 					<div className="flex flex-row justify-between z-50 -mt-3 w-full">
@@ -128,7 +128,7 @@ export default function App() {
 				<div className="relative overflow-hidden bg-white h-full lg:h-full">
 					<div className="relative flex flex-col justify-center w-full h-full py-12 mx-auto gap-8">
 						<div className="py-2 flex flex-col  text-center justify-center items-center mt-5">
-							<h3 className="text-primary1 text-[14px] md:text-[15px] lg:text-[18px] font-[400] lg:font-[500] mb-2">
+							<h3 className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
 								{currentContent.gallery}
 							</h3>
 							<h1 className="font-reddit text-[28px] xl:text-[40px] 2xl:text-[48px] text-primarytext mb-2 font-medium w-auto lg:text-nowrap">
