@@ -152,7 +152,7 @@ const ContactUs = () => {
 	};
 
 	return (
-		<div className="relative w-full flex items-center justify-center overflow-hidden">
+		<div className={`relative w-full flex items-center justify-center overflow-hidden ${language === "si" ? "font-indumathi" : ""}`}>
 			<div className="px-4 md:px-10 lg:px-10 xl:px-52 relative h-auto lg:h-full md:h-full flex items-center justify-center">
 				{/* Container */}
 				<div className="flex flex-col md:flex-col lg:flex-row lg:justify-evenly items-center gap-10 px-6 py-0 lg:py-12 mx-auto ">

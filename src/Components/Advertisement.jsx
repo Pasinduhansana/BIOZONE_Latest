@@ -118,7 +118,7 @@ const Advertisement = () => {
 	];
 
 	return (
-		<div className="container mt-0 lg:mt-24 relative mx-auto flex flex-col items-center justify-center h-auto lg:pt-0 pt-10 lg:h-screen lg:gap-10 gap-0 w-screen overflow-hidden px-5 lg:px-0">
+		<div className={`container mt-0 lg:mt-24 relative mx-auto flex flex-col items-center justify-center h-auto lg:pt-0 pt-10 lg:h-screen lg:gap-10 gap-0 w-screen overflow-hidden px-5 lg:px-0 ${language === "si" ? "font-indumathi" : ""}`}>
 			{/* Header */}
 			<motion.div
 				className="text-center flex flex-col justify-center items-center"

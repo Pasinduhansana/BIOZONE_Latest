@@ -25,7 +25,7 @@ const Landing = () => {
 	const currentContent = content[language];
 
 	return (
-		<div className="2xl:px-52 xl:px-24 px-10 relative max-h-[250vh] h-auto lg:h-screen w-screen flex  flex-col lg:flex-row  items-center justify-start lg:justify-between gap-10 lg:gap-40 overflow-hidden">
+		<div className={`2xl:px-52 xl:px-24 px-10 relative max-h-[250vh] h-auto lg:h-screen w-screen flex  flex-col lg:flex-row  items-center justify-start lg:justify-between gap-10 lg:gap-40 overflow-hidden ${language === "si" ? "font-indumathi" : ""}`}>
 			<img
 				src={bgimage}
 				alt="Background DNA sample"

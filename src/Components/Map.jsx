@@ -38,7 +38,7 @@ const Map = () => {
 	const data = classData[language] || classData.en;
 
 	return (
-		<div className="container mx-auto relative min-h-auto  lg:min-h-full mt-10 lg:mt-0 py-5 pb-10 lg:py-16">
+		<div className={`container mx-auto relative min-h-auto  lg:min-h-full mt-10 lg:mt-0 py-5 pb-10 lg:py-16 ${language === "si" ? "font-indumathi" : ""}`}>
 			<div className="text-center lg:p-5 p-3">
 				<div className="flex flex-col items-center justify-center px-5 lg:px-0">
 					<motion.div

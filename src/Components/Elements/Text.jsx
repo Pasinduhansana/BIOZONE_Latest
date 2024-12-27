@@ -1,9 +1,20 @@
-import React, { useRef } from "react";
+import React, {useState,useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import BackgroundGradientAnimation from "./BackgroundGradientAnimation";
 import Advertisement from "../Advertisement";
+import Content from "../../content/AboutUsContent";
 
 const Text = () => {
+	const [language, setLanguage] = useState("en");
+
+	useEffect(() => {
+		const savedLanguage = localStorage.getItem("language");
+		if (savedLanguage) {
+			setLanguage(savedLanguage);
+		}
+	}, []);
+
+	const currentContent = Content[language];
 	// Create refs for each animation
 	const section1Ref = useRef(null);
 	const section2Ref = useRef(null);
@@ -30,13 +41,16 @@ const Text = () => {
 
 	return (
 		<div className="flex flex-col">
-			<div className="relative flex flex-col justify-center w-full items-center ">
+			 {language === "si"
+                ? <>si  aaa</>
+                :<>en</> }
+			<div className="relative flex flex-col justify-center w-full items-center z-20 ">
 				{/* <BackgroundGradientAnimation
 					className={"-translate-y-[0%] lg:translate-y-[-10%]"}
 				/> */}
 				<div className="hidden  lg:flex flex-col justify-start items-center lg:h-[70vh] w-full md:w-[1000px] gap-5 z-50 px-4 md:px-0">
 					<p className=" text-primary1 text-[14px] md:text-[15px] lg:text-[18px] font-[400] lg:font-[500] mb-10">
-						About Us
+						{currentContent.topic}
 					</p>
 					<motion.div
 						className="flex flex-col md:flex-row justify-between items-center gap-10 w-full"
@@ -48,7 +62,7 @@ const Text = () => {
 					>
 						{/* 1st Row - total Column */}
 						<h1 className="text-5xl md:text-[80px] lg:text-[120px] font-serif text-gray-700 ">
-							Where
+							{currentContent.title1}
 						</h1>
 						<p
 							className="text-gray-900 text-base md:text-lg lg:text-xl max-w-full md:max-w-[500px] lg:max-w-full animate-orbit7 delay-[200ms] font-thin"
@@ -56,8 +70,7 @@ const Text = () => {
 							animate={{ opacity: 1, x: -360, y: 440 }}
 							transition={{ duration: 2.8, ease: "easeInOut" }}
 						>
-							Now through this web site, he is ready to guide you towards your
-							academic goals with personalized support and resources.
+						{currentContent.description1}
 						</p>
 					</motion.div>
 					<motion.div
@@ -75,8 +88,7 @@ const Text = () => {
 							animate={{ opacity: 1, x: -360, y: 440 }}
 							transition={{ duration: 2.8, ease: "easeInOut" }}
 						>
-							His dedication and expertise have made him a trusted mentor for
-							Advanced Level students.
+												{currentContent.description3}
 						</p>
 						<p className="text-5xl md:text-[80px] lg:text-[120px] font-serif text-gray-700 leading-none">
 							Biology&nbsp;and
@@ -92,16 +104,14 @@ const Text = () => {
 					>
 						{/* 3rd Row - total Column */}
 						<p className="text-5xl md:text-[80px] lg:text-[120px] font-serif text-gray-700 leading-none">
-							Technology
+						{currentContent.title3}
 						</p>
 						<p
 							className="text-gray-900 text-base md:text-lg lg:text-xl max-w-full md:max-w-[500px] lg:max-w-full animate-orbit5 font-thin"
 							initial={{ opacity: 0, x: 0, y: 0 }}
 							animate={{ opacity: 1, x: -360, y: 440 }}
 							transition={{ duration: 2.8, ease: "easeInOut" }}
-						>
-							His dedication and expertise have made him a trusted mentor for
-							Advanced Level students.
+						>{currentContent.description3}
 						</p>
 					</motion.div>
 					<motion.div
@@ -118,11 +128,10 @@ const Text = () => {
 							animate={{ opacity: 1, x: -360, y: 440 }}
 							transition={{ duration: 2.8, ease: "easeInOut" }}
 						>
-							Where Now through this web site, he is ready to guide you towards
-							your academic goals with personalized support and resources.
+									{currentContent.description1}
 						</p>
 						<p className="text-5xl md:text-[80px] lg:text-[120px] w-full flex justify-center font-serif text-gray-700 leading-none">
-							Meet
+						{currentContent.title4}
 						</p>
 					</motion.div>
 				</div>
@@ -187,6 +196,7 @@ const Text = () => {
 				</div>
 				<Advertisement />
 			</div>
+
 		</div>
 	);
 };

@@ -107,7 +107,7 @@ const Gallery = () => {
 	const currentContent = content[language];
 
 	return (
-		<section className="relative overflow-hidden  py-5 lg:py-0 h-full lg:h-full">
+		<section className={`relative overflow-hidden  py-5 lg:py-0 h-full lg:h-full ${language === "si" ? "font-indumathi" : ""}`}>
 			<div className="relative flex flex-col justify-center w-full h-full py-0 lg:py-12 mx-auto gap-8">
 				<div className="py-2 flex flex-col  text-center justify-center items-center">
 					<h3 className=" text-primary1 text-[14px] md:text-[15px] lg:text-[18px] font-[400] lg:font-[500] mb-2">

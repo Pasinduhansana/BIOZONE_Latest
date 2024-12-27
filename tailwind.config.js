@@ -5,6 +5,7 @@ export default {
 		extend: {
 			fontFamily: {
 				reddit: ['"Reddit Sans"', "sans-serif"],
+				indumathi: ['Indumathi', 'Arial', 'sans-serif'],
 			},
 			colors: {
 				primarytext: "#383838", //Back text colour

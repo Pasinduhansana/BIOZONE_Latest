@@ -23,7 +23,7 @@ const FAQ = () => {
 	const faqs = content.questions || [];
 
 	return (
-		<div className="relative w-full lg:min-h-screen py-10 lg:py-0 h-full flex items-center justify-center overflow-hidden">
+		<div className={`relative w-full lg:min-h-screen py-10 lg:py-0 h-full flex items-center justify-center overflow-hidden ${language === "si" ? "font-indumathi" : ""}`}>
 			<img
 				src={bgImage}
 				alt="Background"
