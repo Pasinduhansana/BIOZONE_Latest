@@ -164,5 +164,5 @@ export {
 	SinhalaButton,
 	EnglishButton,
 	LanguageToggleButton,
-
+	SplashScreenLanguageToggleButton
 };

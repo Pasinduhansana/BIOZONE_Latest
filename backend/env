@@ -1,0 +1,2 @@
+PORT =3080
+mongodbURL= 'mongodb+srv://root:root@biozone.keptc.mongodb.net/?retryWrites=true&w=majority&appName=biozone'
