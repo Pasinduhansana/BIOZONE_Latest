@@ -6,7 +6,14 @@ import content from "../content/advertisementContent";
 
 const Advertisement = () => {
 	const [language, setLanguage] = useState("en");
+	const [language, setLanguage] = useState("en");
 
+	useEffect(() => {
+		const savedLanguage = localStorage.getItem("language");
+		if (savedLanguage) {
+			setLanguage(savedLanguage);
+		}
+	}, []);
 	useEffect(() => {
 		const savedLanguage = localStorage.getItem("language");
 		if (savedLanguage) {
@@ -15,16 +22,22 @@ const Advertisement = () => {
 	}, []);
 
 	const currentContent = content[language];
+	const currentContent = content[language];
 
-  const [advertisements, setAdvertisements] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [isScalingDown, setIsScalingDown] = useState(false);
-  const [direction, setDirection] = useState(1);  // control mobile view image sliding direction
+	const [advertisements, setAdvertisements] = useState([]);
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const [isAnimating, setIsAnimating] = useState(false);
+	const [loading, setLoading] = useState(true);
 
 	const autoSlideInterval = useRef(null);
+	const autoSlideInterval = useRef(null);
 
+	useEffect(() => {
+		const savedLanguage = localStorage.getItem("language");
+		if (savedLanguage) {
+			setLanguage(savedLanguage);
+		}
+	}, []);
 	useEffect(() => {
 		const savedLanguage = localStorage.getItem("language");
 		if (savedLanguage) {
@@ -47,10 +60,33 @@ const Advertisement = () => {
 				setLoading(false);
 			}
 		};
+	useEffect(() => {
+		const fetchAdvertisements = async () => {
+			try {
+				const response = await axios.get("http://localhost:3080/api/admin/");
+				if (response.data.message === "Advertisements fetched successfully") {
+					setAdvertisements(response.data.data);
+				} else {
+					console.error("Failed to fetch advertisements.");
+				}
+			} catch (error) {
+				console.error("Error fetching advertisements:", error);
+			} finally {
+				setLoading(false);
+			}
+		};
 
 		fetchAdvertisements();
 	}, []);
+		fetchAdvertisements();
+	}, []);
 
+	useEffect(() => {
+		if (advertisements.length > 0) {
+			startAutoSlide();
+		}
+		return () => stopAutoSlide(); // Cleanup
+	}, [advertisements]);
 	useEffect(() => {
 		if (advertisements.length > 0) {
 			startAutoSlide();
@@ -64,6 +100,12 @@ const Advertisement = () => {
 			goToNext();
 		}, 5000); // Auto-slide every 5 seconds
 	};
+	const startAutoSlide = () => {
+		stopAutoSlide(); // Clear any existing interval
+		autoSlideInterval.current = setInterval(() => {
+			goToNext();
+		}, 5000); // Auto-slide every 5 seconds
+	};
 
 	const stopAutoSlide = () => {
 		if (autoSlideInterval.current) {
@@ -71,52 +113,46 @@ const Advertisement = () => {
 			autoSlideInterval.current = null;
 		}
 	};
+	const stopAutoSlide = () => {
+		if (autoSlideInterval.current) {
+			clearInterval(autoSlideInterval.current);
+			autoSlideInterval.current = null;
+		}
+	};
 
-  const goToPrevious = () => {
-    stopAutoSlide(); // Reset auto-slide timer
-    startAutoSlide();
-    setDirection(-1);
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setCurrentIndex(
-        (prevIndex) =>
-          (prevIndex - 1 + advertisements.length) % advertisements.length
-      );
-    }
-  };
+	const goToPrevious = () => {
+		stopAutoSlide(); // Reset auto-slide timer
+		startAutoSlide();
+		if (!isAnimating) {
+			setIsAnimating(true);
+			setCurrentIndex(
+				(prevIndex) =>
+					(prevIndex - 1 + advertisements.length) % advertisements.length
+			);
+		}
+	};
 
-  const goToNext = () => {
-    stopAutoSlide(); // Reset auto-slide timer
-    startAutoSlide();
-    setDirection(1);
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % advertisements.length);
-    }
-  };
+	const goToNext = () => {
+		stopAutoSlide(); // Reset auto-slide timer
+		startAutoSlide();
+		if (!isAnimating) {
+			setIsAnimating(true);
+			setCurrentIndex((prevIndex) => (prevIndex + 1) % advertisements.length);
+		}
+	};
 
-  useEffect(() => {
-    if (isAnimating) {
-      const timer = setTimeout(() => {
-        setIsAnimating(false);
-      }, 500); // Match animation duration
-      return () => clearTimeout(timer);
-    }
-  }, [isAnimating]);
+	useEffect(() => {
+		if (isAnimating) {
+			const timer = setTimeout(() => {
+				setIsAnimating(false);
+			}, 500); // Match animation duration
+			return () => clearTimeout(timer);
+		}
+	}, [isAnimating]);
 
-  useEffect(() => {
-    if (advertisements.length > 0) {
-      const scaleDownTimer = setTimeout(() => {
-        setIsScalingDown(true);
-      }, 4800);  // 5 seconds - 1.5 seconds
-
-      return () => {
-        clearTimeout(scaleDownTimer);
-        setIsScalingDown(false);  // Reset scale-down state after each slide
-      }
-    }
-  }, [currentIndex, advertisements])
-
+	if (loading) {
+		return <div>Loading advertisements...</div>;
+	}
 	if (loading) {
 		return <div>Loading advertisements...</div>;
 	}
@@ -124,9 +160,19 @@ const Advertisement = () => {
 	if (advertisements.length === 0) {
 		return <div>No advertisements available</div>;
 	}
+	if (advertisements.length === 0) {
+		return <div>No advertisements available</div>;
+	}
 
 	const images = advertisements.map((ad) => ad.imageUrl);
+	const images = advertisements.map((ad) => ad.imageUrl);
 
+	// Calculate visible images
+	const visibleImages = [
+		images[(currentIndex - 1 + images.length) % images.length],
+		images[currentIndex],
+		images[(currentIndex + 1) % images.length],
+	];
 	// Calculate visible images
 	const visibleImages = [
 		images[(currentIndex - 1 + images.length) % images.length],
@@ -172,82 +218,80 @@ const Advertisement = () => {
           <VscChevronLeft className="text-gray-500 text-[55px]" />
         </button>
 
-        {/* Carousel Content */}
-        <div className="overflow-hidden lg:w-[1214px] h-full flex flex-row items-center">
-          <div className="flex ">
-            {visibleImages.map((image, index) => (
-              <motion.img
-                key={`${image}-${currentIndex}-${index}`}
-                src={image}
-                alt={`Slide ${index}`}
-                className={`object-cover h-full w-full border-[1.5px] overflow-hidden rounded-[15px] border-gray-200 mx-2 ${
-                  index === 1 ? `mx-2` : `mx-0`
-                }`}
-                initial={{ scale: 0.8, opacity: 0.5 }}
-                animate={{
-                  scale: index === 1 ? (isScalingDown ? 0.8 : 1.2) : 0.8, // Scale larger for the center, slightly smaller for sides
-                  opacity: index === 1 ? 1 : 0.7, // Full opacity for center, reduced for sides
-                  x: index === 0 ? -10 : index === 2 ? 10 : 0, // Subtle horizontal translation for left/right images
-                }}
-                transition={{
-                  scale: { duration: 0.7 },
-                  opacity: { duration: 0.7 },
-                  x: { duration: 0.7 }, // Smooth transition
-                }}
-                loading="lazy"
-              />
-            ))}
-          </div>
-        </div>
+				{/* Carousel Content */}
+				<div className="overflow-hidden px-2 lg:w-[1214px] h-full flex flex-row items-center">
+					<div className="flex transition-transform duration-500">
+						{visibleImages.map((image, index) => (
+							<div
+								key={index}
+								className={`flex-shrink-0 w-[300px] border-[1.5px] overflow-hidden rounded-[15px] border-gray-200 h-[300px] mr-[150px] ${
+									index === 1 ? "scale-150" : "scale-100"
+								}`}
+							>
+								<img
+									src={image}
+									alt={`Slide ${index}`}
+									className="object-cover h-full w-full"
+									loading="lazy"
+								/>
+							</div>
+						))}
+					</div>
+				</div>
 
-        {/* Next Button */}
-        <button
-          onClick={goToNext}
-          className="absolute top-1/2 right-12 z-10 bg-white bg-opacity-50 rounded-full transform -translate-y-1/2"
-          aria-label="Next slide"
-        >
-          <VscChevronRight className="text-gray-500 text-[55px]" />
-        </button>
-      </motion.div>
+				{/* Next Button */}
+				<button
+					onClick={goToNext}
+					className="absolute top-1/2 right-2 z-10 bg-white bg-opacity-50 rounded-full transform -translate-y-1/2"
+					aria-label="Next slide"
+				>
+					<VscChevronRight className="text-gray-500 text-[55px]" />
+				</button>
+			</motion.div>
 
-      {/* Mobile Carousel */}
-      <motion.div
-        className="flex overflow-hidden relative flex-col lg:hidden items-center justify-center gap-2 h-[400px]"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: false, amount: 0.5 }}
-      >
-        <div className="overflow-hidden px-2 w-[320px] h-full flex flex-row items-center">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0, x: direction * 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
-            className="flex"
-          >
-            <div className="w-[300px] h-[300px] rounded-lg overflow-hidden">
-              <img
-                src={images[currentIndex]}
-                alt={`Slide ${currentIndex}`}
-                className="object-cover h-full w-full"
-                loading="lazy"
-              />
-            </div>
-          </motion.div>
-        </div>
-        <div className="flex flex-row mt-4">
-          <button onClick={goToPrevious} aria-label="Previous slide" className="p-2">
-            <VscChevronLeft className="text-gray-500 text-[30px]" />
-          </button>
-          <button onClick={goToNext} aria-label="Next slide" className="p-2">
-            <VscChevronRight className="text-gray-500 text-[30px]" />
-          </button>
-        </div>
-      </motion.div>
-    </div>
-  );
+			{/* Mobile Carousel */}
+			<motion.div
+				className="flex overflow-hidden relative flex-col lg:hidden items-center justify-center gap-2 h-[400px]"
+				initial={{ opacity: 0, y: 50 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.5 }}
+				viewport={{ once: false, amount: 0.5 }}
+			>
+				<div className="overflow-hidden px-2 w-[320px] h-full flex flex-row items-center">
+					<motion.div
+						key={currentIndex}
+						initial={{ opacity: 0, x: -100 }}
+						animate={{ opacity: 1, x: 0 }}
+						exit={{ opacity: 0, x: 100 }}
+						transition={{ duration: 0.5 }}
+						className="flex"
+					>
+						<div className="w-[300px] h-[300px] rounded-lg overflow-hidden">
+							<img
+								src={images[currentIndex]}
+								alt={`Slide ${currentIndex}`}
+								className="object-cover h-full w-full"
+								loading="lazy"
+							/>
+						</div>
+					</motion.div>
+				</div>
+				<div className="flex flex-row mt-4">
+					<button
+						onClick={goToPrevious}
+						aria-label="Previous slide"
+						className="p-2"
+					>
+						<VscChevronLeft className="text-gray-500 text-[30px]" />
+					</button>
+					<button onClick={goToNext} aria-label="Next slide" className="p-2">
+						<VscChevronRight className="text-gray-500 text-[30px]" />
+					</button>
+				</div>
+			</motion.div>
+		</div>
+	);
+
 };
 
 export default Advertisement;
