@@ -111,7 +111,7 @@ const Landing = () => {
 					transition={{ duration: 1.2, delay: 0.7 }}
 					viewport={{ once: true, amount: 0.3 }}
 				>
-					<h1 className="text-[28px] xl:text-[36px] 2xl:text-[30px] ">+10</h1>
+					<h1 className={`text-[28px] xl:text-[36px] 2xl:text-[30px] ${language === "si" ? "font-reddit" : ""} `}>+10</h1>
 					<h1 className="text-[14px] xl:text-[16px] 2xl:text-[16px] font-thin mb-2">
 						{currentContent.experience}
 					</h1>
@@ -123,7 +123,7 @@ const Landing = () => {
 					transition={{ duration: 0.8, delay: 1.0 }}
 					viewport={{ once: true, amount: 0.3 }}
 				>
-					<h1 className="text-[28px] xl:text-[36px] 2xl:text-[40px]">+4</h1>
+					<h1 className={`text-[28px] xl:text-[36px] 2xl:text-[40px] ${language === "si" ? "font-reddit" : ""}`}>+4</h1>
 					<div className="h-[70%] w-[1.5px] bg-primaryHover1 mx-4"></div>
 					<div className="flex flex-col items-center justify-center text-center text-primary1 w-[140px] lg:w-[193px]">
 						<h1 className="text-[14px] xl:text-[16px] 2xl:text-[18px] font-semibold">

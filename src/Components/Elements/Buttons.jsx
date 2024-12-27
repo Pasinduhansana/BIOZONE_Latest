@@ -92,7 +92,7 @@ const LanguageToggleButton = ({ onLanguageChange, language }) => {
 	const isEnglish = language === "en";
 
 	return (
-		<div className="flex items-center justify-center gap-1 ">
+		<div className={`flex items-center justify-center gap-1 ${language === "si" ? "font-reddit" : ""}`}>
 			<button
 				className={`text-primary1 text-[14px] border-2 border-primary1 hover:scale-[1.02] rounded-[5px] h-[30px] w-[30px]  transition-all duration-200 ${
 					isEnglish

@@ -88,7 +88,7 @@ const Map = () => {
 							}}
 							onClick={() => openModal(institute)}
 						>
-							<div className="absolute bottom-0 w-full h-[110px] p-2 pl-5   mt-2 bg-[#FFFFFF99] backdrop-blur-[10px] flex flex-col gap-1 border-none ">
+							<div className={`absolute bottom-0 w-full h-[110px] p-2 pl-5   mt-2 bg-[#FFFFFF99] backdrop-blur-[10px] flex flex-col gap-1 border-none ${language === "si" ? "font-reddit" : ""}`}>
 								<h2 className="text-[20px] xl:text-[24px] 2xl:text-[26px]  text-[#090909] font-[500]">
 									{institute.locationName}
 								</h2>
@@ -129,7 +129,7 @@ const Map = () => {
 						<div className="absolute  bg-[#FFFFFF99] backdrop-blur-[5px] lg:p-4 bottom-0 rounded-[16px] w-screen lg:w-5/12 -mb-5 lg:mb-0 2xl:w-4/12 h-[400px] lg:h-[450px] lg:top-1/2 lg:right-5 transform  pb-5 lg:pb-0 translate-y-* lg:-translate-y-1/2 flex items-center justify-center shadow-lg">
 							<div className="relative  overflow-hidden lg:w-11/12">
 								{/* Location Name and Address */}
-								<div className="text-2xl text-gray-800 mb-2 lg:mb-4 text-center p-2">
+								<div className={`text-2xl text-gray-800 mb-2 lg:mb-4 text-center p-2 ${language === "si" ? "font-reddit" : ""}`}>
 									<div className="font-medium text-[18px] xl:text-[22px] 2xl:text-[24px]">
 										{selectedTimetable.locationName}
 									</div>
@@ -153,7 +153,7 @@ const Map = () => {
 										>
 											{/* Class Details */}
 											<div className="bg-gradient-to-r from-primary2 to-primary1 text-white p-3 rounded-lg w-7/12">
-												<div className="flex justify-between w-full">
+												<div className={`flex justify-between w-full ${language === "si" ? "font-reddit" : ""}`}>
 													<span className="font-medium text-[16px] xl:text-[18px] mt-[3px] 2xl:text-[20px] w-16">
 														{classItem.classtype}
 													</span>
@@ -166,7 +166,7 @@ const Map = () => {
 												</div>
 											</div>
 											{/* Class Time */}
-											<div className="ml-3 text-right text-gray-700">
+											<div className={`ml-3 text-right text-gray-700 ${language === "si" ? "font-reddit" : ""}`}>
 												<p className="text-base font-normal">{classItem.day}</p>
 												<p className="text-xs text-center">{classItem.time}</p>
 											</div>

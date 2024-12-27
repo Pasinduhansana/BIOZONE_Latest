@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 const BackgroundGradientAnimation = ({ className }) => {
 	return (
 		<div
-			className={`absolute inset-0 ${className} overflow-hidden  pt-20 pb-10`}
-			style={{ backgroundColor: "white" }}
+			className={`absolute inset-0 ${className} overflow-hidden min-h-screen  pt-20 pb-10`}
+			style={{ backgroundColor: "" }}
 		>
 			<motion.div
 				className="absolute w-[40vh] h-[40vh] bg-primaryHover1 rounded-full filter blur-3xl"

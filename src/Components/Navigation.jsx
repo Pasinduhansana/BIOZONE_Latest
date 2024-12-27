@@ -148,7 +148,7 @@ const Navigation = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
               <button className="w-full bg-gradient-to-r from-primary1 to-primary2 text-white px-4 py-2 rounded-lg hover:bg-teal-700">
                 {currentContent.onlineStudentPortal}
               </button>
-              <div className="flex justify-start items-center py-3 px-0">
+              <div className={`flex justify-start items-center py-3 px-0 ${language === "si" ? "font-reddit" : ""}`}>
                 <LanguageToggleButton
                   onLanguageChange={handleLanguageChange}
                   language={language}
