@@ -48,7 +48,9 @@ const Map = () => {
 						transition={{ duration: 0.5 }}
 						viewport={{ once: true, amount: 0.3 }}
 					>
-						{content.title}
+						<span className={`${language === "si" ? "font-amantha" : ""}`}>
+							{content.title}
+						</span>
 					</motion.div>
 					<motion.div
 						className="font-reddit text-[28px] xl:text-[40px] 2xl:text-[48px] text-primarytext mb-2 font-medium w-auto lg:text-nowrap"
@@ -81,7 +83,7 @@ const Map = () => {
 					{data.map((institute, index) => (
 						<div
 							key={index}
-							className="rounded-[16px] overflow-hidden transform transition-all  duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer w-[90vw] h-[340px] lg:h-[17vw] lg:w-[28vw] "
+							className={`rounded-[16px] overflow-hidden transform transition-all  duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer w-[90vw] h-[340px] lg:h-[17vw] lg:w-[28vw] ${language === "si" ? "font-poppins" : ""}`}
 							style={{
 								backgroundImage: `url(${mapimages[index]})`,
 								backgroundSize: "cover",
@@ -111,7 +113,7 @@ const Map = () => {
 
 			{/* Modal for Timetable Details */}
 			{isModalOpen && (
-				<div className="fixed inset-0  flex items-center justify-center backdrop-blur-[10px] bg-black bg-opacity-10 z-50">
+				<div className={`fixed inset-0  flex items-center justify-center backdrop-blur-[10px] bg-black bg-opacity-10 z-50 ${language === "si" ? "font-poppins" : ""}`}>
 					<div className="bg-white lg:w-4/5 lg:h-5/6 w-full h-full  relative rounded-lg">
 						<button
 							className="absolute  right-1 m-3  w-8 h-8 bg-white border border-solid border-gray-300 flex justify-center items-center rounded-full hover:bg-primaryHover1 hover:text-white"
