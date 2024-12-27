@@ -72,7 +72,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 	};
 
 	return (
-		<div className={`relative flex flex-col w-full items-center justify-center overflow-hidden`}>
+		<div className={`relative flex flex-col w-full items-center justify-center overflow-hidden ${language === "si" ? "font-indumathi" : ""}`}>
 			{/* <img
 				src={bgimg}
 				alt="bgimage"
@@ -91,6 +91,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 					<div className="max-w-lg mb-8 md:text-left md:mb-0 w-auto md:w-2/6">
 						<h2 className="mb-4 text-3xl font-medium lg:font-semibold text-gray-[#606060] px-1 md:text-left sm:text-left lg:text-left text-center md:font-semibold md:text-[30px] lg:text-3xl">
 							{currentContent.readyToElevate}
+							{<span className={`${language === "si" ? "font-sans" : "hidden"}`}>?</span>}
 						</h2>
 						<p className="mb-6  text-primarytext3 text-[14px] lg:text-l md:text-left text-center lg:text-left">
 							{currentContent.startJourney}
