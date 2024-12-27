@@ -121,10 +121,13 @@ export default function App() {
             <div className="flex items-center cursor-pointer w-auto">
               <img src={Logo} alt="Logo" className="w-14 h-auto" />
             </div>
-            <SecondaryButton
-              TextContent={currentContent.backto}
-              onclickevent={handleClick}
-            />
+
+            <button
+              className=" text-primary1 border-2 bg-white border-primary1  hover:scale-[1.02] rounded-[8px] h-[48px] w-auto hover:text-primaryHover2 transition-all duration-200 px-2"
+              onClick={handleClick}
+            >
+              {currentContent.backto}
+            </button>
           </div>
         </div>
       </nav>

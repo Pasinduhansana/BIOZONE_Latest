@@ -159,7 +159,8 @@ const Gallery = () => {
               <img
                 src={Img1}
                 alt="Grid 1"
-                className="absolute object-cover w-full h-full"
+                className="absolute object-cover w-full h-auto -top-5 
+                "
               />
             </motion.div>
 
@@ -209,7 +210,7 @@ const Gallery = () => {
 
             {/* 4 */}
             <motion.div
-              className={`lg:h-[35vh] bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl overflow-hidden col-span-4 ${
+              className={`relative lg:h-[35vh] bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl overflow-hidden col-span-4 ${
                 hoveredIndex !== null && hoveredIndex !== 3 ? "blur-sm" : ""
               }`}
               initial={{ opacity: 0, y: 50 }}
@@ -220,9 +221,9 @@ const Gallery = () => {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <img
-                src={Img2}
+                src={Img4}
                 alt="Grid 1"
-                className="object-cover w-full h-full"
+                className="absolute object-cover w-full h-auto -top-20"
               />
             </motion.div>
 
@@ -239,7 +240,7 @@ const Gallery = () => {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <img
-                src={Img4}
+                src={Img2}
                 alt="Grid 1"
                 className="object-cover w-full h-[50%] rounded-xl"
               />
@@ -288,7 +289,7 @@ const Gallery = () => {
 
             {/* 8 */}
             <motion.div
-              className={`lg:h-[35vh] bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl col-span-4 ${
+              className={` relative lg:h-[35vh] bg-gray-100 shadow ring-1 ring-inset overflow-hidden ring-gray-200 rounded-xl col-span-4 ${
                 hoveredIndex !== null && hoveredIndex !== 6 ? "blur-sm" : ""
               }`}
               initial={{ opacity: 0, y: 50 }}
@@ -301,7 +302,7 @@ const Gallery = () => {
               <img
                 src={Img5}
                 alt="Grid 1"
-                className="object-cover w-full h-full rounded-xl"
+                className="absolute  object-cover w-full h-auto rounded-xl -top-28"
               />
             </motion.div>
 
@@ -359,7 +360,7 @@ const Gallery = () => {
               <p className="text-2xl text-center">
                 {currentContent.galleryView}
                 <br />
-                <br />
+
                 <animated.span
                   className={`${language === "si" ? "font-poppins" : ""}`}
                 >
@@ -370,7 +371,7 @@ const Gallery = () => {
 
             {/* 11 */}
             <motion.div
-              className={`lg:h-[35vh] flex flex-col gap-4 bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl overflow-hidden col-span-3 ${
+              className={`relative  lg:h-[35vh] flex flex-col gap-4 bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl overflow-hidden col-span-3 ${
                 hoveredIndex !== null && hoveredIndex !== 10 ? "blur-sm" : ""
               }`}
               initial={{ opacity: 0, y: 50 }}
@@ -380,11 +381,15 @@ const Gallery = () => {
               onMouseEnter={() => setHoveredIndex(10)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <img
-                src={Img4}
-                alt="Grid 1"
-                className="object-cover w-full h-[50%] rounded-xl"
-              />
+              <div className="relative flex w-full h-[50%] rounded-xl overflow-hidden">
+                {" "}
+                <img
+                  src={Img4}
+                  alt="Grid 1"
+                  className="absolute object-cover w-full h-auto -top-24 "
+                />
+              </div>
+
               <div className="flex items-center justify-center p-6 h-[50%] text-white shadow ring-1 ring-inset md:col-span-5 md:row-span-1 rounded-xl bg-gradient-to-r from-primary1 to-primary2">
                 <p className="text-4xl text-center ">
                   <animated.span
@@ -606,10 +611,10 @@ const Gallery = () => {
               transition={{ duration: 0.5, delay: 1.1 }}
               viewport={{ once: true, amount: 0.1 }}
             >
-              <p className="text-2xl text-center">
+              <p className="flex flex-col gap-5 text-2xl text-center">
                 {currentContent.galleryView}
                 <br />
-                <br />
+
                 <animated.span
                   className={`${language === "si" ? "font-poppins" : ""}`}
                 >
@@ -645,7 +650,7 @@ const Gallery = () => {
                 <animated.span
                   className={`${language === "si" ? "font-poppins" : ""}`}
                 >
-                  {animatedCounter3.number.to((n) => `${n.toFixed(0)}+`)}
+                  {animatedCounter4.number.to((n) => `${n.toFixed(0)}+`)}
                 </animated.span>
               </p>
               <p
@@ -683,11 +688,14 @@ const Gallery = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           viewport={{ once: true, amount: 0.1 }}
         >
-          <SecondaryButton
-            TextContent={currentContent.Loadmore}
-            className="mt-10"
-            onclickevent={handleClick}
-          />
+          <div className="flex items-center justify-center">
+            <button
+              className="text-primary1 border-2 bg-white border-primary1  hover:scale-[1.02] rounded-[8px] h-[48px] w-auto hover:text-primaryHover2 transition-all duration-200 px-2"
+              onClick={handleClick}
+            >
+              {currentContent.Loadmore}
+            </button>
+          </div>
         </motion.div>
       </div>
     </section>

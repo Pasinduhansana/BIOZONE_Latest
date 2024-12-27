@@ -6,7 +6,7 @@ const PrimaryButton = ({ TextContent }) => {
   return (
     <div className="flex items-center justify-center">
       <button
-        className="flex flex-row items-center justify-center text-primarytextwhite bg-gradient-to-r from-primary1 to-primary2  hover:scale-[1.02] rounded-[8px] h-[48px] w-auto hover:text-white transition-all duration-200 px-2"
+        className="flex flex-row items-center justify-center text-primarytextwhite bg-gradient-to-r from-primary1 to-primary2  hover:scale-[1.02] rounded-[8px] h-[48px] w-auto hover:text-white transition-all duration-200 px-6"
         onClick={() =>
           window.open("https://charithamunasinghe.com/login", "_blank")
         }
