@@ -147,7 +147,6 @@ const Advertisement = () => {
         viewport={{ once: false, amount: 0.5 }}
       >
         <p className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
-
           {currentContent.highlights}
         </p>
         <h2 className="text-2xl xl:text-3xl px-20 lg:px-0 2xl:text-4xl text-primarytext mb-2 font-medium">
