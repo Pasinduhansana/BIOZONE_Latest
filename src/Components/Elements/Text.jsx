@@ -41,9 +41,9 @@ const Text = () => {
 
 	return (
 		<div className="flex flex-col">
-			 {language === "si"
+			 {/* {language === "si"
                 ? <>si  aaa</>
-                :<>en</> }
+                :<>en</> } */}
 			<div className="relative flex flex-col justify-center w-full items-center z-20 ">
 				{/* <BackgroundGradientAnimation
 					className={"-translate-y-[0%] lg:translate-y-[-10%]"}

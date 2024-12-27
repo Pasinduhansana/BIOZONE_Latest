@@ -7,6 +7,7 @@ export default {
 				reddit: ['Reddit Sans', "sans-serif"],
 				indumathi: ['Indumathi', 'Arial', 'sans-serif'],
 				poppins: ['Poppins', 'sans-serif'],
+				amantha: ['Amantha', 'sans-serif'],
 			},
 			colors: {
 				primarytext: "#383838", //Back text colour

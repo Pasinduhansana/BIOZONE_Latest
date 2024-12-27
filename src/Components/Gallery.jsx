@@ -111,7 +111,9 @@ const Gallery = () => {
 			<div className="relative flex flex-col justify-center w-full h-full py-0 lg:py-12 mx-auto gap-8">
 				<div className="py-2 flex flex-col  text-center justify-center items-center">
 					<h3 className=" text-primary1 text-[14px] md:text-[15px] lg:text-[18px] font-[400] lg:font-[500] mb-2">
-						{currentContent.gallery}
+						<span className={`${language === "si" ? "font-amantha" : ""}`}>
+							{currentContent.gallery}
+						</span>
 					</h3>
 					<h1 className="font-reddit text-[28px] xl:text-[40px] 2xl:text-[48px] text-primarytext mb-2 font-medium w-auto lg:text-nowrap">
 						{currentContent.chatToTeam}
@@ -159,7 +161,7 @@ const Gallery = () => {
 								{currentContent.completedJourney}
 								<br />
 								<br />
-								<animated.span>
+								<animated.span className={`${language === "si" ? "font-poppins" : ""}`}>
 									{animatedCounter1.number.to((n) => `${n.toFixed(0)}Y+`)}
 								</animated.span>
 							</p>
@@ -223,11 +225,13 @@ const Gallery = () => {
 							/>
 							<div className="flex items-center justify-center p-6 h-[50%] text-white shadow ring-1 ring-inset md:col-span-5 md:row-span-1 rounded-xl bg-gradient-to-r from-primary1 to-primary2">
 								<p className="text-4xl text-center ">
-									<animated.span>
+									<animated.span className={`${language === "si" ? "font-poppins" : ""}`}>
 										{animatedCounter2.number.to((n) => `${n.toFixed(0)}+`)}
 									</animated.span>
 								</p>
-								<p className="px-12 text-4xl">|</p>
+								<p className="px-12 text-4xl">
+									<span className={`${language === "si" ? "font-poppins" : ""}`}>|</span>
+								</p>
 								<p className="text-lg text-center">
 									{currentContent.positiveFeedback}
 								</p>
@@ -330,7 +334,7 @@ const Gallery = () => {
 								{currentContent.galleryView}
 								<br />
 								<br />
-								<animated.span>
+								<animated.span className={`${language === "si" ? "font-poppins" : ""}`}>
 									{animatedCounter3.number.to((n) => `${n.toFixed(0)}+`)}
 								</animated.span>
 							</p>
@@ -355,11 +359,13 @@ const Gallery = () => {
 							/>
 							<div className="flex items-center justify-center p-6 h-[50%] text-white shadow ring-1 ring-inset md:col-span-5 md:row-span-1 rounded-xl bg-gradient-to-r from-primary1 to-primary2">
 								<p className="text-4xl text-center ">
-									<animated.span>
+									<animated.span className={`${language === "si" ? "font-poppins" : ""}`}>
 										{animatedCounter3.number.to((n) => `${n.toFixed(0)}+`)}
 									</animated.span>
 								</p>
-								<p className="px-12 text-4xl">|</p>
+								<p className="px-12 text-4xl">
+									<span className={`${language === "si" ? "font-poppins" : ""}`}>|</span>
+								</p>
 								<p className="text-lg text-center">
 									{currentContent.resgisteduser}
 								</p>
@@ -417,7 +423,9 @@ const Gallery = () => {
 									{animatedCounter2.number.to((n) => `${n.toFixed(0)}+`)}
 								</animated.span>
 							</p>
-							<p className="px-12 text-4xl">|</p>
+							<p className="px-12 text-4xl">
+								<span className={`${language === "si" ? "font-poppins" : ""}`}>|</span>
+							</p>
 							<p className="text-[18px] text-center">
 								{currentContent.positiveFeedback}
 							</p>
