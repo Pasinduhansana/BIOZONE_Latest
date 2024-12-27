@@ -40,11 +40,11 @@ const Text = () => {
 	});
 
 	return (
-		<div className="flex flex-col">
+		<div className="flex flex-col min-h-screen">
 			{language === "si"
 				? <>
 					{/* Sinhala Content */}
-					<div className="relative flex flex-col justify-center w-full h-full items-center z-20 ">
+					<div className="relative flex flex-col justify-center w-full min-h-full items-center z-20 ">
 						<BackgroundGradientAnimation
 							className={"-translate-y-[0%] lg:translate-y-[-10%]"}
 						/>
@@ -63,7 +63,7 @@ const Text = () => {
 							>
 								{/*  Row - total Column */}
 								<p className="text-5xl text-start md:text-[80px] lg:text-[120px] font-serif text-gray-700 leading-none">
-									{currentContent.description2}
+									{currentContent.title2}
 								</p>
 							</motion.div>
 							<motion.div
@@ -76,7 +76,7 @@ const Text = () => {
 							>
 								{/*  Row - total Column */}
 								<p
-									className="text-gray-900 text-base md:text-lg lg:text-xl max-w-full md:max-w-[500px] lg:w-1/3 animate-orbit6 gap-20 font-thin"
+									className="text-gray-900 text-justify text-base md:text-lg lg:text-xl max-w-full md:max-w-[500px] lg:w-1/3 animate-orbit6 gap-20 font-thin"
 									initial={{ opacity: 0, x: 0, y: 0 }}
 									animate={{ opacity: 1, x: -360, y: 440 }}
 									transition={{ duration: 2.8, ease: "easeInOut" }}
@@ -89,18 +89,18 @@ const Text = () => {
 
 							</motion.div>
 							<motion.div
-								className="flex flex-col md:flex-row justify-between items-center w-full gap-0"
+								className="flex flex-col md:flex-row justify-between items-center w-full gap-10"
 								initial={{ opacity: 0, y: 50 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.6, delay: 0.9 }}
 								viewport={{ once: true, amount: 0.3 }}
 							>
 								{/*  Row - total Column */}
-								<p className="text-5xl md:text-[80px] lg:text-[120px] w-full flex justify-center font-serif text-gray-700 leading-none">
+								<p className="text-5xl md:text-[80px] lg:text-[120px] w-full flex justify-center font-serif text-gray-700 leading-none ">
 									{currentContent.title4}
 								</p>
 								<p
-									className="text-gray-900 text-base md:text-lg lg:text-xl max-w-full md:max-w-[500px] lg:max-w-full animate-orbit4 delay-[400ms] gap-20 font-thin"
+									className="text-gray-900 text-base md:text-lg lg:text-xl max-w-full md:max-w-[500px] lg:max-w-full animate-orbit4 delay-[400ms] gap-20 font-thin "
 									initial={{ opacity: 0, x: 0, y: 0 }}
 									animate={{ opacity: 1, x: -360, y: 440 }}
 									transition={{ duration: 2.8, ease: "easeInOut" }}
@@ -339,7 +339,6 @@ const Text = () => {
 								</div>
 							</motion.div>
 						</div>
-						<Advertisement />
 					</div>
 				</>}
 		</div>
