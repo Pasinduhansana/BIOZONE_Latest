@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import content from "../content/advertisementContent";
 
 const Advertisement = () => {
-
-
   const [language, setLanguage] = useState("en");
 
   useEffect(() => {
@@ -23,7 +21,7 @@ const Advertisement = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [loading, setLoading] = useState(true);
   const [isScalingDown, setIsScalingDown] = useState(false);
-  const [direction, setDirection] = useState(1);  // control mobile view image sliding direction
+  const [direction, setDirection] = useState(1); // control mobile view image sliding direction
 
   const autoSlideInterval = useRef(null);
 
@@ -110,21 +108,21 @@ const Advertisement = () => {
     if (advertisements.length > 0) {
       const scaleDownTimer = setTimeout(() => {
         setIsScalingDown(true);
-      }, 4800);  // 5 seconds - 1.5 seconds
+      }, 4800); // 5 seconds - 1.5 seconds
 
       return () => {
         clearTimeout(scaleDownTimer);
-        setIsScalingDown(false);  // Reset scale-down state after each slide
-      }
+        setIsScalingDown(false); // Reset scale-down state after each slide
+      };
     }
-  }, [currentIndex, advertisements])
+  }, [currentIndex, advertisements]);
 
   if (loading) {
     return <div>Loading advertisements...</div>;
   }
 
   if (advertisements.length === 0) {
-    return <div>No advertisements available</div>;
+    return <div></div>;
   }
 
   const images = advertisements.map((ad) => ad.imageUrl);
@@ -154,7 +152,6 @@ const Advertisement = () => {
         </h2>
         <p className="text-gray-600 mb-3 lg:mb-10 font-sans text-[16px] px-8 lg:px-0 mt-3 xl:text-lg 2xl:text-lg font-thin">
           {currentContent.description}
-
         </p>
       </motion.div>
 
@@ -241,7 +238,11 @@ const Advertisement = () => {
           </motion.div>
         </div>
         <div className="flex flex-row mt-4">
-          <button onClick={goToPrevious} aria-label="Previous slide" className="p-2">
+          <button
+            onClick={goToPrevious}
+            aria-label="Previous slide"
+            className="p-2"
+          >
             <VscChevronLeft className="text-gray-500 text-[30px]" />
           </button>
           <button onClick={goToNext} aria-label="Next slide" className="p-2">

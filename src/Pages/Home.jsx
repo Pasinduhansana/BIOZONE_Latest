@@ -11,64 +11,61 @@ import Navigation from "../Components/Navigation";
 import Map from "../Components/Map";
 import VortextComponent from "../Components/VortextComponent";
 import Text from "../Components/Elements/Text";
+import { SecondaryButton } from "../Components/Elements/Buttons"; // Import SecondaryButton
 
 const Home = () => {
-	// Define refs for each section
-	const homeRef = useRef(null);
-	const locationsRef = useRef(null);
-	const galleryRef = useRef(null);
-	const contactRef = useRef(null);
+  // Define refs for each section
+  const homeRef = useRef(null);
+  const locationsRef = useRef(null);
+  const galleryRef = useRef(null);
+  const contactRef = useRef(null);
 
-	const location = useLocation();
+  const location = useLocation();
 
-	useEffect(() => {
-		const params = new URLSearchParams(location.search);
-		const lang = params.get("lang");
-		if (lang) {
-			localStorage.setItem("language", lang);
-		}
-	}, [location]);
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const lang = params.get("lang");
+    if (lang) {
+      localStorage.setItem("language", lang);
+    }
+  }, [location]);
 
-	return (
-		<div className="flex flex-col w-screen overflow-hidden">
-			{/* Pass the refs to the corresponding sections */}
-			<Navigation
-				homeRef={homeRef}
-				locationsRef={locationsRef}
-				galleryRef={galleryRef}
-				contactRef={contactRef}
-			/>
-			<div ref={homeRef}>
-				<Landing />
-			</div>
-			<div ref={locationsRef}>
-				<Map />
-			</div>
-			<div ref={galleryRef}>
-				<Gallery />
-			</div>
-			<FAQ />
-			{/* <AboutUs /> */}
-			<Text />
-			 <Advertisement /> 
-			<div ref={contactRef}>
-				<ContactUs />
-			</div>
-			{/* <Footer
-        className="absolute bottom-0 left-0 w-screen"
+  const scrollToMap = () => {
+    locationsRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div className="flex flex-col max-w-[100vw] overflow-hidden">
+      <Navigation
         homeRef={homeRef}
         locationsRef={locationsRef}
         galleryRef={galleryRef}
         contactRef={contactRef}
-      /> */}
-			<VortextComponent
-				homeRef={homeRef}
-				locationsRef={locationsRef}
-				galleryRef={galleryRef}
-				contactRef={contactRef}
-			/>
-		</div>
-	);
+      />
+      <SecondaryButton TextContent="Go to Map" onclickevent={scrollToMap} />{" "}
+      <div ref={homeRef}>
+        <Landing mapref={locationsRef} />
+      </div>
+      <div ref={locationsRef}>
+        <Map />
+      </div>
+      <div ref={galleryRef}>
+        <Gallery />
+      </div>
+      <FAQ />
+      <Text />
+      <Advertisement />
+      <div ref={contactRef}>
+        <ContactUs />
+      </div>
+      <VortextComponent
+        homeRef={homeRef}
+        locationsRef={locationsRef}
+        galleryRef={galleryRef}
+        contactRef={contactRef}
+      />
+    </div>
+  );
 };
 
 export default Home;

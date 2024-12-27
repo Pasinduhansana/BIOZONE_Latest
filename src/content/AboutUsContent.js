@@ -20,6 +20,8 @@ const aboutUsContent = {
     title5: "",
     description5:
       "With his deep knowledge of biology and passion for teaching, he inspires many students to succeed.",
+    description6:
+      "This website is here to help you achieve your biology goals by offering personalized guidance and essential resources for your learning journey.",
   },
   si: {
     topic: "අපි කවුද",
