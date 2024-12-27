@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+@font-face {
+  font-family: "Indumathi";
+  font-style: normal;
+  font-weight: normal;
+  src: 
+    local("4u-Indumathi"),
+    url("./Assest/Fonts/4u-indumathi.ttf") format("truetype");
+}
+
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -13,6 +25,7 @@
     background-position: 0% 50%;
   }
 }
+
 
 body {
   font-family: "Poppins", sans-serif;
