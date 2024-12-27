@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import BackgroundGradientAnimation from "./BackgroundGradientAnimation";
-import Advertisement from "../Advertisement";
 import Content from "../../content/AboutUsContent";
 
 const Text = () => {
@@ -188,7 +187,6 @@ const Text = () => {
 								</div>
 							</motion.div>
 						</div>
-						<Advertisement />
 					</div>
 				</>
 				: <>

@@ -50,7 +50,7 @@ const Home = () => {
 			<FAQ />
 			{/* <AboutUs /> */}
 			<Text />
-			
+			 <Advertisement /> 
 			<div ref={contactRef}>
 				<ContactUs />
 			</div>
