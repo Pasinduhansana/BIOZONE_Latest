@@ -39,7 +39,11 @@ const AboutUs = () => {
   const circleOpacity = Math.max(1 - scrollY / 1000, 0.5); // Fade out as user scrolls
 
   return (
-    <div className={`relative flex items-center justify-center overflow-hidden ${language === "si" ? "font-indumathi" : ""}`}>
+    <div
+      className={`relative flex items-center justify-center  overflow-hidden ${
+        language === "si" ? "font-indumathi" : ""
+      }`}
+    >
       {/* Background Gradient Animation */}
       <BackgroundGradientAnimation className="absolute inset-0 z-0" />
 

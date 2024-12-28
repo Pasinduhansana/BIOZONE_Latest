@@ -95,22 +95,22 @@ const Landing = ({ mapref }) => {
           src={portrait}
           alt="Portrait Image"
           width={460}
-          className="absolute bottom-0 z-30 mb-[6px] lg:mb-[10px] ml-5  lg:ml-12 object-cover"
+          className="absolute bottom-0 z-20 mb-[6px] lg:mb-[10px] ml-5  lg:ml-12 object-cover"
         />
         <img
           src={vector}
           alt="vector"
-          className="absolute z-20 -ml-20 -top-32"
+          className="absolute z-10 -ml-20 -top-32"
         />
         <img
           src={bgcardimg}
           alt="background card image"
-          className=" z-20 h-[45vh] lg:h-[60vh] w-[280px] lg:w-[421px]"
+          className=" z-10 h-[45vh] lg:h-[60vh] w-[280px] lg:w-[421px]"
         />
 
         {/* Glass Effect Cards */}
         <motion.div
-          className="absolute z-40 flex flex-col lg:-top-10 lg:-left-15 top-5 -left-2 justify-center  text-primary1 items-center rounded-[8px]  w-[120px] h-[60px] lg:w-[140px] lg:h-[80px] bg-[#FFFFFF99] backdrop-blur-[30px] shadow-[0px_4px_34.6px_0px_#0000001A] animate-orbit"
+          className="absolute z-30 flex flex-col lg:-top-10 lg:-left-15 top-5 -left-2 justify-center  text-primary1 items-center rounded-[8px]  w-[120px] h-[60px] lg:w-[140px] lg:h-[80px] bg-[#FFFFFF99] backdrop-blur-[30px] shadow-[0px_4px_34.6px_0px_#0000001A] animate-orbit"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.7 }}
@@ -128,7 +128,7 @@ const Landing = ({ mapref }) => {
           </h1>
         </motion.div>
         <motion.div
-          className="absolute z-40 flex flex-row items-center justify-center bottom-4 lg:bottom-10 -left-10 lg:-left-28 text-primary1  rounded-[8px] w-[240px] h-[70px] lg:w-[312px] lg:h-[91px] bg-[#FFFFFF99] backdrop-blur-[30px] shadow-[0px_4px_34.6px_0px_#0000001A] animate-orbit2"
+          className="absolute z-30 flex flex-row items-center justify-center bottom-4 lg:bottom-10 -left-10 lg:-left-28 text-primary1  rounded-[8px] w-[240px] h-[70px] lg:w-[312px] lg:h-[91px] bg-[#FFFFFF99] backdrop-blur-[30px] shadow-[0px_4px_34.6px_0px_#0000001A] animate-orbit2"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
@@ -153,7 +153,7 @@ const Landing = ({ mapref }) => {
         </motion.div>
 
         <motion.div
-          className="absolute z-40 flex flex-col justify-center items-center text-primary1 -right-10 -lg:right-14 top-58 lg:top-38 rounded-[8px] w-[160px] h-[50px] lg:w-[190px] lg:h-[68px] bg-[#FFFFFF99] backdrop-blur-[30px] shadow-[0px_4px_34.6px_0px_#0000001A] animate-orbit3"
+          className="absolute z-30 flex flex-col justify-center items-center text-primary1 -right-10 -lg:right-14 top-58 lg:top-38 rounded-[8px] w-[160px] h-[50px] lg:w-[190px] lg:h-[68px] bg-[#FFFFFF99] backdrop-blur-[30px] shadow-[0px_4px_34.6px_0px_#0000001A] animate-orbit3"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.1 }}

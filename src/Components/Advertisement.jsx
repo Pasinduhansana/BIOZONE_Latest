@@ -147,10 +147,10 @@ const Advertisement = () => {
         <p className="text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
           {currentContent.highlights}
         </p>
-        <h2 className="text-2xl xl:text-3xl px-20 lg:px-0 2xl:text-4xl text-primarytext mb-2 font-medium">
+        <h2 className="font-reddit text-2xl xl:text-3xl px-20 lg:px-0 2xl:text-4xl text-primarytext mb-2 font-medium">
           {currentContent.title}
         </h2>
-        <p className="text-gray-600 mb-3 lg:mb-10 font-sans text-[16px] px-8 lg:px-0 mt-3 xl:text-lg 2xl:text-lg font-thin">
+        <p className="font-poppins text-gray-600 mb-3 lg:mb-10  text-[16px] px-8 lg:px-0 mt-3 xl:text-lg 2xl:text-lg font-thin">
           {currentContent.description}
         </p>
       </motion.div>

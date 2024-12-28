@@ -1,54 +1,59 @@
 /* Duration of the transition, adjust as needed */
 @keyframes slide-next {
-	0% {
-		transform: translateX(100%);
-		opacity: 0;
-	}
-	100% {
-		transform: translateX(0);
-		opacity: 1;
-	}
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes slide-prev {
-	0% {
-		transform: translateX(-100%);
-		opacity: 0;
-	}
-	100% {
-		transform: translateX(0);
-		opacity: 1;
-	}
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@font-face {
+  font-family: "RedditSans-SemiBold";
+  src: url("./Assest/Fonts/RedditSans-SemiBold.ttf") format("truetype");
 }
 
 .carousel-container {
-	display: flex;
-	overflow: hidden; /* Hide overflow */
-	width: 100%; /* Set width to your desired size */
+  display: flex;
+  overflow: hidden; /* Hide overflow */
+  width: 100%; /* Set width to your desired size */
 }
 
 .carousel-wrapper {
-	display: flex;
-	transition: transform 0.5s ease-in-out; /* Smooth transition */
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth transition */
 }
 
 .carousel-item {
-	min-width: calc(33.33% - 10px); /* Adjust width to account for gap */
-	margin-right: 10px; /* Add gap between items */
-	box-sizing: border-box; /* Include padding and border in width */
+  min-width: calc(33.33% - 10px); /* Adjust width to account for gap */
+  margin-right: 10px; /* Add gap between items */
+  box-sizing: border-box; /* Include padding and border in width */
 }
 
 /* Remove margin from the last item to prevent overflow */
 .carousel-item:last-child {
-	margin-right: 0;
+  margin-right: 0;
 }
 /* background color dots */
 .bg__gradient {
-	filter: blur(180px);
-	z-index: -100;
+  filter: blur(180px);
+  z-index: -100;
 }
 
 .bg__gradient_main {
-	filter: blur(130px);
-	z-index: -100;
+  filter: blur(130px);
+  z-index: -100;
 }

@@ -136,7 +136,6 @@ const Navigation = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
             {navLinks.map((link, index) => (
               <li key={index}>
                 <a
-                  href="#"
                   className="block text-[14px] text-gray-600 pl-2 hover:text-teal-600"
                   onClick={() => scrollToSection(sectionRefs[index])}
                 >
@@ -148,7 +147,11 @@ const Navigation = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
               <button className="w-full bg-gradient-to-r from-primary1 to-primary2 text-white px-4 py-2 rounded-lg hover:bg-teal-700">
                 {currentContent.onlineStudentPortal}
               </button>
-              <div className={`flex justify-start items-center py-3 px-0 ${language === "si" ? "font-reddit" : ""}`}>
+              <div
+                className={`flex justify-start items-center py-3 px-0 ${
+                  language === "si" ? "font-reddit" : ""
+                }`}
+              >
                 <LanguageToggleButton
                   onLanguageChange={handleLanguageChange}
                   language={language}

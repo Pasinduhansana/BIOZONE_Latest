@@ -4,7 +4,7 @@ import classimage1 from "../Assest/Web_Images/1.jpg";
 import classimage2 from "../Assest/Web_Images/5.jpg";
 import classimage3 from "../Assest/Web_Images/4.jpg";
 import classimage4 from "../Assest/Web_Images/7.jpg";
-import mapContent from "../Content/MapContent";
+import mapContent from "../content/MapContent";
 import classData from "../content/classdata";
 import { motion } from "framer-motion";
 
@@ -39,7 +39,7 @@ const Map = () => {
 
   return (
     <div
-      className={`container mx-auto relative min-h-auto  lg:min-h-full mt-10 lg:mt-0 py-5 pb-10 lg:py-16 ${
+      className={`container mx-auto relative min-h-auto px-2 lg:px-32  lg:min-h-full mt-10 lg:mt-0 py-5 pb-10 lg:py-16 ${
         language === "si" ? "font-indumathi" : ""
       }`}
     >
