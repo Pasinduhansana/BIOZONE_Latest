@@ -125,7 +125,7 @@ const Gallery = () => {
     >
       <div
         ref={gridRef1}
-        className="relative flex flex-col justify-center w-full h-full py-0 lg:py-12 mx-auto gap-8"
+        className="relative flex flex-col justify-center w-full px-0 lg:px-32 h-full py-0 lg:py-12 mx-auto gap-8"
       >
         <div className="py-2 flex flex-col  text-center justify-center items-center">
           <h3 className=" text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
@@ -140,7 +140,7 @@ const Gallery = () => {
             {currentContent.witness}
           </p>
         </div>
-        <div className="pt-6 py-2 px-6 overflow-hidden mx-auto mt-0 text-gray-500  border-neutral-200 text-balance">
+        <div className="pt-0 lg:pt-6 py-2 px-5 overflow-hidden mx-auto mt-0 text-gray-500  border-neutral-200 text-balance">
           {/* Desktop Gallery */}
           <div className="hidden lg:grid grid-cols-1   gap-4 md:grid-cols-4 lg:grid-cols-7  grid-flow-row">
             {/* 1 */}
@@ -240,7 +240,7 @@ const Gallery = () => {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <img
-                src={Img2}
+                src={Img9}
                 alt="Grid 1"
                 className="object-cover w-full h-[50%] rounded-xl"
               />
@@ -384,9 +384,9 @@ const Gallery = () => {
               <div className="relative flex w-full h-[50%] rounded-xl overflow-hidden">
                 {" "}
                 <img
-                  src={Img4}
+                  src={Img3}
                   alt="Grid 1"
-                  className="absolute object-cover w-full h-auto -top-24 "
+                  className="absolute object-cover w-full h-auto -top-36 "
                 />
               </div>
 
@@ -548,7 +548,7 @@ const Gallery = () => {
               viewport={{ once: true, amount: 0.1 }}
             >
               <img
-                src={Img6}
+                src={Img3}
                 alt="Grid 1"
                 className="object-cover w-full h-full rounded-xl"
               />
@@ -581,7 +581,7 @@ const Gallery = () => {
               viewport={{ once: true, amount: 0.1 }}
             >
               <img
-                src={Img5}
+                src={Img9}
                 alt="Grid 1"
                 className="object-cover w-full h-full rounded-xl"
               />

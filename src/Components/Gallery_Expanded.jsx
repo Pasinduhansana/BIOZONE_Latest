@@ -145,7 +145,7 @@ export default function App() {
                 {currentContent.witness}
               </p>
             </div>
-            <div className="pt-6 py-2 px-6 overflow-hidden mx-auto mt-0 text-gray-500  border-neutral-200 text-balance">
+            <div className="pt-0 py-2 px-6 overflow-hidden mx-auto mt-0 text-gray-500  border-neutral-200 text-balance">
               {/* Desktop Gallery */}
               <div className="hidden lg:grid grid-cols-1   gap-4 md:grid-cols-4 lg:grid-cols-7  grid-flow-row">
                 {/* 1 */}
@@ -165,7 +165,7 @@ export default function App() {
                     <img
                       src={Img1}
                       alt="image1"
-                      className="absolute object-cover w-full h-full bottom-0"
+                      className="absolute object-cover w-full h-AUTO -top-5"
                     />
                   </PhotoView>
                 </motion.div>
@@ -204,9 +204,9 @@ export default function App() {
                   onMouseEnter={() => setHoveredIndex(2)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <PhotoView src={Img2}>
+                  <PhotoView src={Img4}>
                     <img
-                      src={Img2}
+                      src={Img4}
                       alt="Grid 1"
                       className="object-cover w-full h-full"
                     />
@@ -246,9 +246,9 @@ export default function App() {
                   onMouseEnter={() => setHoveredIndex(4)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <PhotoView src={Img4}>
+                  <PhotoView src={Img2}>
                     <img
-                      src={Img4}
+                      src={Img2}
                       alt="Grid 1"
                       className="object-cover w-full h-[50%] rounded-xl"
                     />
@@ -289,7 +289,7 @@ export default function App() {
 
                 {/* 8 */}
                 <motion.div
-                  className={`lg:h-[35vh] bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl col-span-4 ${
+                  className={`relative lg:h-[35vh] bg-gray-100 overflow-hidden shadow ring-1 ring-inset ring-gray-200 rounded-xl col-span-4 ${
                     hoveredIndex !== null && hoveredIndex !== 6 ? "blur-sm" : ""
                   }`}
                   initial={{ opacity: 0, y: 50 }}
@@ -303,7 +303,7 @@ export default function App() {
                     <img
                       src={Img5}
                       alt="Grid 1"
-                      className="object-cover w-full h-full rounded-xl"
+                      className="absolute object-cover w-full h-auto rounded-xl -top-24"
                     />
                   </PhotoView>
                 </motion.div>
@@ -386,9 +386,9 @@ export default function App() {
                   onMouseEnter={() => setHoveredIndex(10)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <PhotoView src={Img4}>
+                  <PhotoView src={Img9}>
                     <img
-                      src={Img4}
+                      src={Img9}
                       alt="Grid 1"
                       className="object-cover w-full h-[50%] rounded-xl"
                     />

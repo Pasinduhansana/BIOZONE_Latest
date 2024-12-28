@@ -83,7 +83,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
 				className="absolute bottom-0 lg:translate-y-2/3 -translate-y-1/6 left-10 lg:left-40 -rotate-[15deg] transform scale-y-[-1] h-[60%] -z-10 animate-orbit3"
 			/> */}
 
-      <div className="flex items-center justify-center -mb-5 lg:mb-0">
+      <div className="flex items-center justify-center -mb-5 lg:mb-0 ">
         <motion.div
           className="flex flex-col items-center justify-between px-6 py-12 lg:px-60 md:flex-row md:py-4 ease-linear"
           initial={{ opacity: 0, y: 100 }}
@@ -93,7 +93,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
         >
           {/* Text Section */}
           <div className="max-w-lg mb-8 md:text-left md:mb-0 w-auto md:w-2/6">
-            <h2 className="mb-4 text-3xl font-medium lg:font-semibold text-gray-[#606060] px-1 md:text-left sm:text-left lg:text-left text-center md:font-semibold md:text-[30px] lg:text-3xl">
+            <h2 className="font-reddit mb-4 text-3xl font-medium lg:font-semibold text-gray-[#606060] px-1 md:text-left sm:text-left  lg:text-left text-center md:font-semibold md:text-[30px] lg:text-3xl">
               {currentContent.readyToElevate}
               {
                 <span
@@ -103,7 +103,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
                 </span>
               }
             </h2>
-            <p className="mb-6  text-primarytext3 text-[14px] lg:text-l md:text-left text-center lg:text-left">
+            <p className="mb-6 font-poppins  text-primarytext3 text-[14px] lg:text-l md:text-left text-center lg:text-left">
               {currentContent.startJourney}
               <span className={`${language === "si" ? "font-poppins" : ""}`}>
                 !

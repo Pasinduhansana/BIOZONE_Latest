@@ -168,7 +168,7 @@ const ContactUs = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <p className=" font-reddit text-gray-500 text-[16px] sm:text-[18px] md:text-base mb-4 text-center md:text-left">
+            <p className=" font-poppins text-gray-500 text-[16px] sm:text-[18px] md:text-base mb-4 text-center md:text-left">
               <span className={`${language === "si" ? "font-poppins" : ""}`}>
                 BioZone{" "}
               </span>
@@ -269,7 +269,7 @@ const ContactUs = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <h2 className="text-[#008861] text-center text-4xl lg:text-4xl md:text-[64px] font-[600px] lg:mt-0 md:mt-5 mb-4 lg:mb-10">
+            <h2 className="font-reddit text-[#008861] text-center text-4xl lg:text-4xl md:text-[64px] font-[600px] lg:mt-0 md:mt-5 mb-4 lg:mb-10">
               {content.getInTouch}
             </h2>
             <p className="text-gray-500 text-center text-sm sm:text-base mb-6">
