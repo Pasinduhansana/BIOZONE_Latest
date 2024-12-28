@@ -2,13 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "react-spring"; // Import react-spring for animation
 import { motion } from "framer-motion";
 import Img1 from "../Assest/Web_Images/1.jpg";
-import Img2 from "../Assest/Web_Images/2.jpeg";
-import Img3 from "../Assest/Web_Images/3.jpg";
-import Img4 from "../Assest/Web_Images/4.jpg";
-import Img5 from "../Assest/Web_Images/5.jpg";
-import Img6 from "../Assest/Web_Images/6.jpg";
-import Img7 from "../Assest/Web_Images/7.jpg";
-import Img8 from "../Assest/Web_Images/8.jpg";
+import Img2 from "../Assest/Web_Images/12.jpg";
+import Img3 from "../Assest/Web_Images/16.jpg";
+import Img4 from "../Assest/Web_Images/20.jpg";
+import Img5 from "../Assest/Web_Images/15.jpg";
+import Img6 from "../Assest/Web_Images/31.jpg";
+import Img7 from "../Assest/Web_Images/17.jpg";
+import Img8 from "../Assest/Web_Images/37.jpg";
 import Img9 from "../Assest/Web_Images/9.jpg";
 import content from "../content/galleryContent";
 import { SecondaryButton } from "./Elements/Buttons";
@@ -117,52 +117,44 @@ const Gallery = () => {
 
   const currentContent = content[language];
 
-  return (
-    <section
-      className={`relative overflow-hidden  py-5 lg:py-0 h-full lg:h-full ${
-        language === "si" ? "font-indumathi" : ""
-      }`}
-    >
-      <div
-        ref={gridRef1}
-        className="relative flex flex-col justify-center w-full px-0 lg:px-32 h-full py-0 lg:py-12 mx-auto gap-8"
-      >
-        <div className="py-2 flex flex-col  text-center justify-center items-center">
-          <h3 className=" text-green-600 font-reddit uppercase text-sm font-semibold mb-3">
-            <span className={`${language === "si" ? "font-amantha" : ""}`}>
-              {currentContent.gallery}
-            </span>
-          </h3>
-          <h1 className="font-reddit text-[28px] xl:text-[40px] 2xl:text-[48px] text-primarytext mb-2 font-medium w-auto lg:text-nowrap">
-            {currentContent.chatToTeam}
-          </h1>
-          <p className="text-gray-500 mb-5 font-sans text-[14px] px-8 lg:px-0 xl:text-[18px] 2xl:text-[18px]">
-            {currentContent.witness}
-          </p>
-        </div>
-        <div className="pt-0 lg:pt-6 py-2 px-5 overflow-hidden mx-auto mt-0 text-gray-500  border-neutral-200 text-balance">
-          {/* Desktop Gallery */}
-          <div className="hidden lg:grid grid-cols-1   gap-4 md:grid-cols-4 lg:grid-cols-7  grid-flow-row">
-            {/* 1 */}
-            <motion.div
-              ref={gridRef1}
-              className={`relative lg:h-[35vh]  bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl overflow-hidden col-span-3 ${
-                hoveredIndex !== null && hoveredIndex !== 0 ? "blur-sm" : ""
-              }`}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true, amount: 0.1 }}
-              onMouseEnter={() => setHoveredIndex(0)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <img
-                src={Img1}
-                alt="Grid 1"
-                className="absolute object-cover w-full h-auto -top-5 
-                "
-              />
-            </motion.div>
+	return (
+		<section className={`relative overflow-hidden  py-5 lg:py-0 h-full lg:h-full ${language === "si" ? "font-indumathi" : ""}`}>
+			<div className="relative flex flex-col justify-center w-full h-full py-0 lg:py-12 mx-auto gap-8">
+				<div className="py-2 flex flex-col  text-center justify-center items-center">
+					<h3 className=" text-primary1 text-[14px] md:text-[15px] lg:text-[18px] font-[400] lg:font-[500] mb-2">
+						<span className={`${language === "si" ? "font-amantha" : ""}`}>
+							{currentContent.gallery}
+						</span>
+					</h3>
+					<h1 className="font-reddit text-[28px] xl:text-[40px] 2xl:text-[48px] text-primarytext mb-2 font-medium w-auto lg:text-nowrap">
+						{currentContent.chatToTeam}
+					</h1>
+					<p className="text-gray-500 mb-5 font-sans text-[14px] px-8 lg:px-0 xl:text-[18px] 2xl:text-[18px]">
+						{currentContent.witness}
+					</p>
+				</div>
+				<div className="pt-6 py-2 px-6 overflow-hidden mx-auto mt-0 text-gray-500  border-neutral-200 text-balance">
+					{/* Desktop Gallery */}
+					<div className="hidden lg:grid grid-cols-1   gap-4 md:grid-cols-4 lg:grid-cols-7  grid-flow-row">
+						{/* 1 */}
+						<motion.div
+							ref={gridRef1}
+							className={`relative lg:h-[35vh]  bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl overflow-hidden col-span-3 ${
+								hoveredIndex !== null && hoveredIndex !== 0 ? "blur-sm" : ""
+							}`}
+							initial={{ opacity: 0, y: 50 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5, delay: 0.1 }}
+							viewport={{ once: true, amount: 0.1 }}
+							onMouseEnter={() => setHoveredIndex(0)}
+							onMouseLeave={() => setHoveredIndex(null)}
+						>
+							<img
+								src={Img1}
+								alt="Grid 1"
+								className="absolute object-cover w-full h-full"
+							/>
+						</motion.div>
 
             {/* 2 */}
             <motion.div
@@ -302,7 +294,7 @@ const Gallery = () => {
               <img
                 src={Img5}
                 alt="Grid 1"
-                className="absolute  object-cover w-full h-auto rounded-xl -top-28"
+                className=" object-cover w-full h-full rounded-xl "
               />
             </motion.div>
 
@@ -386,7 +378,7 @@ const Gallery = () => {
                 <img
                   src={Img3}
                   alt="Grid 1"
-                  className="absolute object-cover w-full h-auto -top-36 "
+                  className="absolute object-cover w-full h-auto -top-16 "
                 />
               </div>
 
@@ -413,7 +405,7 @@ const Gallery = () => {
 
             {/* 12 */}
             <motion.div
-              className={`lg:h-[35vh] bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl col-span-4 ${
+              className={`lg:h-[35vh] relative overflow-hidden bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-xl col-span-4 ${
                 hoveredIndex !== null && hoveredIndex !== 11 ? "blur-sm" : ""
               }`}
               initial={{ opacity: 0, y: 50 }}
@@ -426,7 +418,7 @@ const Gallery = () => {
               <img
                 src={Img8}
                 alt="Grid 1"
-                className="object-cover w-full h-full rounded-xl"
+                className="object-cover w-full h-auto rounded-xl absolute -top-5"
               />
             </motion.div>
           </div>
@@ -667,7 +659,7 @@ const Gallery = () => {
 
             {/* 12 */}
             <motion.div
-              className="h-[25vh]  bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-[8px] "
+              className="h-[35vh]  bg-gray-100 shadow ring-1 ring-inset ring-gray-200 rounded-[8px] "
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1.2 }}
