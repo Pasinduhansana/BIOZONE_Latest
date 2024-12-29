@@ -227,9 +227,9 @@ export default function App() {
                   onMouseEnter={() => setHoveredIndex(2)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <PhotoView src={Img4}>
+                  <PhotoView src={Img30}>
                     <img
-                      src={Img4}
+                      src={Img30}
                       alt="Grid 1"
                       className="object-cover w-full h-full"
                     />
