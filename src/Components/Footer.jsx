@@ -65,10 +65,10 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
   const currentContent = content[language];
   const sectionRefs = [homeRef, galleryRef, locationsRef, contactRef];
   const socialLinks = {
-    facebook: "https://www.facebook.com",
-    twitter: "https://www.twitter.com",
-    instagram: "https://www.instagram.com",
-    linkedin: "https://www.linkedin.com",
+    facebook: "https://web.facebook.com/p/DrCharitha-Munasinghe-100064107070329/",
+    twitter: "https://www.youtube.com/@dr.charithamunasinghe2336",
+    instagram: "https://www.instagram.com/dr.charithamunasinghe/?hl=en",
+    linkedin: "https://www.tiktok.com/@dr.charitha_munasinghe",
   };
 
   return (
@@ -250,7 +250,7 @@ const Footer = ({ homeRef, locationsRef, galleryRef, contactRef }) => {
             {/* Copyright */}
             <p className=" text-[13px] lg:text-sm text-center md:text-left text-[#008661] sm:text-base">
               <span className={`${language === "si" ? "font-popins" : ""}`}>
-                © 2024 BioZone by Webminds. All rights reserved.
+                © 2025 BioZone by Charitha Munasinghe. Developed by <a href="https://webmindsdesigns.com/" rel="noopener noreferrer">Webminds</a>. All rights reserved.
               </span>
             </p>
           </div>
